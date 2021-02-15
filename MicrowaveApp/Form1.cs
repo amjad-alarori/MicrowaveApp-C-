@@ -91,6 +91,5 @@ namespace MicrowaveApp
             MethodInfo mi = _stateManager.GetType().GetMethod((sender as Button).Name);
             mi.Invoke(_stateManager, null);
         }
-
     }
 }
