@@ -27,17 +27,20 @@ namespace MicrowaveApp
 
         public void UpdateView(object sender = null, EventArgs e = null)
         {
+            // Show state info in textbox and write to console
             String info = String.Format("Microwave: {0}\n\nLamp: {1}\n\nDoor: {2}", _stateManager._microwave.ToString(), _stateManager._door.ToString(), _stateManager._lamp.ToString());
             this.StateTextBox.Text = info;
-
             Console.Write(info);
 
+
+            // Verwijder alle buttons
             foreach (Button btn in this.Controls.OfType<Button>().ToList())
             {
                 this.Controls.Remove(btn);
                 btn.Dispose();
             }
 
+            // Foreach permitted trigger for _microwave create new button, onclick runned de trigger
             foreach (var permittedTrigger in _stateManager._microwave.GetPermittedTriggers().Select((value, i) => new { i, value }))
             {
                 Button button = new Button
@@ -88,6 +91,9 @@ namespace MicrowaveApp
 
         public void HandleClick(object sender, EventArgs e)
         {
+            // 1. pak statemanager
+            // 2. Zoekt hij de function via de button name
+            // 3. Invoke, Run de function
             MethodInfo mi = _stateManager.GetType().GetMethod((sender as Button).Name);
             mi.Invoke(_stateManager, null);
         }

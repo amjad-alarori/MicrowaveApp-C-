@@ -97,32 +97,32 @@ namespace MicrowaveApp
         // Todo:: Check if these functions are needed to hook to fire functions
 
         // Start microwave
-        public void Start()
-        {
-            _microwave.Fire(MicrowaveTriggers.Start);
-            if (_lamp.CanFire(LampTriggers.TurnOff))
-            {
-                _lamp.Fire(LampTriggers.TurnOff);
-            }
-        }
+        //public void Start()
+        //{
+        //    _microwave.Fire(MicrowaveTriggers.Start);
+        //    if (_lamp.CanFire(LampTriggers.TurnOn))
+        //    {
+        //        _lamp.Fire(LampTriggers.TurnOn);
+        //    }
+        //}
 
 
-        // Pause microwave
-        public void Pause()
-        {
-            _microwave.Fire(MicrowaveTriggers.Pause);
-        }
+        //// Pause microwave
+        //public void Pause()
+        //{
+        //    _microwave.Fire(MicrowaveTriggers.Pause);
+        //}
 
 
-        // Stop microwave
-        public void Stop()
-        {
-            _microwave.Fire(MicrowaveTriggers.Stop);
-            if (_lamp.CanFire(LampTriggers.TurnOff))
-            {
-                _lamp.Fire(LampTriggers.TurnOff);
-            }
-        }
+        //// Stop microwave
+        //public void Stop()
+        //{
+        //    _microwave.Fire(MicrowaveTriggers.Stop);
+        //    if (_lamp.CanFire(LampTriggers.TurnOff))
+        //    {
+        //        _lamp.Fire(LampTriggers.TurnOff);
+        //    }
+        //}
 
         // Open door
         public void Open()
