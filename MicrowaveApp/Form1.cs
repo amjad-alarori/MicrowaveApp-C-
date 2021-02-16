@@ -29,8 +29,6 @@ namespace MicrowaveApp
             this.StateTextBox.Text = info;
             Console.Write(info);
 
-            this.pictureBox1.Load("https://avatars.githubusercontent.com/u/13196280?s=64&v=4");
-
             // Verwijder alle buttons
             foreach (Button btn in this.Controls.OfType<Button>().ToList())
             {
