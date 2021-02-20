@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace MicrowaveApp
@@ -41,13 +42,13 @@ namespace MicrowaveApp
             {
                 Button button = new Button
                 {
-                    Location = new Point(673, 12 + (23 * permittedTrigger.index)),
+                    Location = new Point(1000, 12 + (23 * permittedTrigger.index)),
                     Name = permittedTrigger.trigger.ToString(),
                     Size = new Size(115, 23),
                     Text = "Microwave: " + permittedTrigger.trigger.ToString(),
                     UseVisualStyleBackColor = true,
                 };
-                button.Click += (object a, EventArgs b) => _stateManager._microwave.StateMachine.Fire(permittedTrigger.trigger);
+                button.Click += new EventHandler(HandleClickMicrowave);
                 button.Click += new EventHandler(UpdateView);
                 this.Controls.Add(button);
             }
@@ -56,13 +57,13 @@ namespace MicrowaveApp
             {
                 Button button = new Button
                 {
-                    Location = new Point(673, 100 + (23 * permittedTrigger.index)),
+                    Location = new Point(1000, 100 + (23 * permittedTrigger.index)),
                     Name = permittedTrigger.trigger.ToString(),
                     Size = new Size(115, 23),
                     Text = "Door: " + permittedTrigger.trigger.ToString(),
                     UseVisualStyleBackColor = true,
                 };
-                button.Click += (object a, EventArgs b) => _stateManager._door.StateMachine.Fire(permittedTrigger.trigger);
+                button.Click += new EventHandler(HandleClickDoor);
                 button.Click += new EventHandler(UpdateView);
                 this.Controls.Add(button);
             }
@@ -81,6 +82,28 @@ namespace MicrowaveApp
             //    button.Click += new EventHandler(UpdateView);
             //    this.Controls.Add(button);
             //}
+        }
+
+        public void HandleClickMicrowave(object sender, EventArgs e)
+        {
+            MethodInfo mi = _stateManager._microwave.GetType().GetMethod((sender as Button).Name);
+            mi.Invoke(_stateManager._microwave, null);
+        }
+
+        public void HandleClickDoor(object sender, EventArgs e)
+        {
+            MethodInfo mi = _stateManager._door.GetType().GetMethod((sender as Button).Name);
+            mi.Invoke(_stateManager._door, null);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
 
         //public void RenderButton()

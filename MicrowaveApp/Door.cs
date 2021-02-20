@@ -1,7 +1,13 @@
-﻿using Stateless;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+using Stateless;
 
 namespace MicrowaveApp
 {
+
+    
 
     public enum door_State
     {
@@ -34,12 +40,19 @@ namespace MicrowaveApp
         public void Open()
         {
             StateMachine.Fire(door_Triggers.Open);
+            PictureBox t = Application.OpenForms["Form1"].Controls["pictureBox1"] as PictureBox;
+            t.Image = Image.FromFile("images/MicrowaveOpen.jpg");
         }
+
+        
 
 
         public void Close()
         {
             StateMachine.Fire(door_Triggers.Close);
+
+            PictureBox t = Application.OpenForms["Form1"].Controls["pictureBox1"] as PictureBox;
+            t.Image = Image.FromFile("images/Microwave.jpg");
         }
     }
 }
