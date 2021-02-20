@@ -1,27 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using MicrowaveApp.Food;
 
 namespace MicrowaveApp
 {
-
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-
+        // variable Chicken, Dat is een nieuwe chicken
+        Chicken Chicken = new Chicken();
+        Meat Meat = new Meat();
+        Doner Doner = new Doner();
+        Meal SelectedMeal;
         StateManager _stateManager;
+        private TimerWrapper _timerWrapper;
 
-        public Form1()
+        public Main()
         {
-            _stateManager = new StateManager();
             InitializeComponent();
-            UpdateView();
+            _stateManager = new StateManager();
+            SelectedMeal = Chicken;
+            _timerWrapper = new TimerWrapper(timer1, textBox1);
         }
-
-        //public List<object> list;
 
         public void UpdateView(object sender = null, EventArgs e = null)
         {
@@ -95,47 +97,57 @@ namespace MicrowaveApp
             MethodInfo mi = _stateManager._door.GetType().GetMethod((sender as Button).Name);
             mi.Invoke(_stateManager._door, null);
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (comboBoxMeals.SelectedIndex)
+            {
+                case 0:
+                {
+                    SelectedMeal = Chicken;
+                    break;
+                }
+                case 1:
+                {
+                    SelectedMeal = Meat;
+                    break;
+                }
+                case 2:
+                {
+                    SelectedMeal = Doner;
+                    break;
+                }
+            }
 
+            pictureBox1.ImageLocation = SelectedMeal.ImagePath;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-
+            _timerWrapper.Tick(SelectedMeal);
+            textBoxMeal.Text = SelectedMeal.StateMachine.State.ToString();
         }
 
-        //public void RenderButton()
-        //{
-        //    list.ForEach(permittedTrigger =>
-        //    {
-        //        var test = permittedTrigger;
-        //        Button button = new Button
-        //        {
-        //            Location = new Point(673, 12 + (23 * index)),
-        //            Name = test.ToString(),
-        //            Size = new Size(115, 23),
-        //            Text = "Microwave: " + test.ToString(),
-        //            UseVisualStyleBackColor = true,
-        //        };
-        //        button.Click += (object a, EventArgs b) => _stateManager._microwave.StateMachine.Fire(test);
-        //        button.Click += new EventHandler(UpdateView);
-        //        this.Controls.Add(button);
-        //    }
-        //    );
-        //    //Button button = new Button
-        //    //{
-        //    //    Location = new Point(673, 12 + (23 * permittedTrigger.i)),
-        //    //    Name = permittedTrigger.value.ToString(),
-        //    //    Size = new Size(115, 23),
-        //    //    Text = "Microwave: " + permittedTrigger.value.ToString(),
-        //    //    UseVisualStyleBackColor = true,
-        //    //};
-        //    //button.Click += (object a, EventArgs b) => _stateManager._microwave.StateMachine.Fire(permittedTrigger.value);
-        //    //button.Click += new EventHandler(UpdateView);
-        //    //this.Controls.Add(button);
-        //}
+        private void button7_Click(object sender, EventArgs e)
+        {
+            _timerWrapper.Start();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _timerWrapper.Stop();
+        }
+
+        // Button that adds 10 seconds to the timer
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            _timerWrapper.ModifyTime(10);
+        }
+
+        // Button that removes 10 seconds from the timer
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _timerWrapper.ModifyTime(-10);
+        }
     }
 }
