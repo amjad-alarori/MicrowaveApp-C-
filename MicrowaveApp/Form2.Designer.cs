@@ -1,7 +1,7 @@
 ﻿
 namespace MicrowaveApp
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,12 @@ namespace MicrowaveApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.StateTextBox = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
-            // 
-            // StateTextBox
-            // 
-            this.StateTextBox.Location = new System.Drawing.Point(12, 12);
-            this.StateTextBox.Name = "StateTextBox";
-            this.StateTextBox.Size = new System.Drawing.Size(654, 426);
-            this.StateTextBox.TabIndex = 0;
-            this.StateTextBox.Text = "";
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.StateTextBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            this.Text = "Form2";
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox StateTextBox;
     }
 }
-

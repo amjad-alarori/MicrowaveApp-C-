@@ -1,4 +1,6 @@
-﻿using Stateless;
+﻿using System.Drawing;
+using Stateless;
+using System.Windows.Forms;
 
 namespace MicrowaveApp
 {
@@ -36,6 +38,9 @@ namespace MicrowaveApp
             if (StateMachine.CanFire(lamp_Triggers.TurnOn))
             {
                 StateMachine.Fire(lamp_Triggers.TurnOn);
+
+                PictureBox pictureBoxLamp = Application.OpenForms["Main"].Controls["pictureBoxLamp"] as PictureBox;
+                pictureBoxLamp.Image = Image.FromFile("images/lampOn.jpg");
             }
         }
 
@@ -44,6 +49,9 @@ namespace MicrowaveApp
             if (StateMachine.CanFire(lamp_Triggers.TurnOff))
             {
                 StateMachine.Fire(lamp_Triggers.TurnOff);
+
+                PictureBox pictureBoxLamp = Application.OpenForms["Main"].Controls["pictureBoxLamp"] as PictureBox;
+                pictureBoxLamp.Image = Image.FromFile("images/lampOff.jpg");
             }
         }
 
