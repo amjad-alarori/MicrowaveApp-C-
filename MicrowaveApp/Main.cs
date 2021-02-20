@@ -23,6 +23,8 @@ namespace MicrowaveApp
             _stateManager = new StateManager();
             SelectedMeal = Chicken;
             _timerWrapper = new TimerWrapper(timer1, textBox1);
+            UpdateView();
+
         }
 
         public void UpdateView(object sender = null, EventArgs e = null)
@@ -119,7 +121,7 @@ namespace MicrowaveApp
                 }
             }
 
-            pictureBox1.ImageLocation = SelectedMeal.ImagePath;
+            pictureBoxFood.ImageLocation = SelectedMeal.ImagePath;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -148,6 +150,21 @@ namespace MicrowaveApp
         private void button4_Click(object sender, EventArgs e)
         {
             _timerWrapper.ModifyTime(-10);
+        }
+
+        private void pictureBoxFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxLamp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

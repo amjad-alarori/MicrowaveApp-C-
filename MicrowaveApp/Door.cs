@@ -40,7 +40,7 @@ namespace MicrowaveApp
         public void Open()
         {
             StateMachine.Fire(door_Triggers.Open);
-            PictureBox t = Application.OpenForms["Form1"].Controls["pictureBox1"] as PictureBox;
+            PictureBox t = Application.OpenForms["Main"].Controls["pictureBox1"] as PictureBox;
             t.Image = Image.FromFile("images/MicrowaveOpen.jpg");
         }
 
@@ -51,7 +51,7 @@ namespace MicrowaveApp
         {
             StateMachine.Fire(door_Triggers.Close);
 
-            PictureBox t = Application.OpenForms["Form1"].Controls["pictureBox1"] as PictureBox;
+            PictureBox t = Application.OpenForms["Main"].Controls["pictureBox1"] as PictureBox;
             t.Image = Image.FromFile("images/Microwave.jpg");
         }
     }
