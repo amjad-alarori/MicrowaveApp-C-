@@ -20,9 +20,9 @@ namespace MicrowaveApp
         public Main()
         {
             InitializeComponent();
-            _stateManager = new StateManager();
-            SelectedMeal = Chicken;
             _timerWrapper = new TimerWrapper(timer1, textBox1);
+            _stateManager = new StateManager(_timerWrapper);
+            SelectedMeal = Chicken;
             UpdateView();
 
         }
@@ -37,8 +37,11 @@ namespace MicrowaveApp
             // Verwijder alle buttons
             foreach (Button btn in this.Controls.OfType<Button>().ToList())
             {
-                this.Controls.Remove(btn);
-                btn.Dispose();
+                if (btn.Text.ToString().Contains("~"))
+                {
+                    this.Controls.Remove(btn);
+                    btn.Dispose();
+                }
             }
 
             // Foreach permitted trigger for _microwave create new button, onclick runned de trigger
@@ -49,7 +52,7 @@ namespace MicrowaveApp
                     Location = new Point(1000, 12 + (23 * permittedTrigger.index)),
                     Name = permittedTrigger.trigger.ToString(),
                     Size = new Size(115, 23),
-                    Text = "Microwave: " + permittedTrigger.trigger.ToString(),
+                    Text = "~Microwave: " + permittedTrigger.trigger.ToString(),
                     UseVisualStyleBackColor = true,
                 };
                 button.Click += new EventHandler(HandleClickMicrowave);
@@ -64,7 +67,7 @@ namespace MicrowaveApp
                     Location = new Point(1000, 100 + (23 * permittedTrigger.index)),
                     Name = permittedTrigger.trigger.ToString(),
                     Size = new Size(115, 23),
-                    Text = "Door: " + permittedTrigger.trigger.ToString(),
+                    Text = "~Door: " + permittedTrigger.trigger.ToString(),
                     UseVisualStyleBackColor = true,
                 };
                 button.Click += new EventHandler(HandleClickDoor);

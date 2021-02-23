@@ -27,8 +27,21 @@ namespace MicrowaveApp
         public void Stop()
         {
             // Todo:: Check if setting enabled false is required / needed.
-            _timerElement.Enabled = false;
-            _timerElement.Stop();
+            //if the timerElement.Enabled is true run _timerElement.Stop()
+            // If click stop while timer is enabled (running) stop timer and disable timer
+            if (_timerElement.Enabled)
+            {
+                _timerElement.Enabled = false;
+                _timerElement.Stop();
+            }
+            //else if timer was(is?) enabled reset the int _duration to 0
+            // else if timer is stopped and click stop again. reset time and reenable timer
+            else
+            {
+                
+                _timerElement.Enabled = true;
+                _duration = 0;
+            }
         }
 
         public void Tick(Meal selectedMeal)
