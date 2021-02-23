@@ -49,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FoodElements\Chicken.cs" />
-    <Compile Include="FoodElements\Doner.cs" />
-    <Compile Include="FoodElements\Meat.cs" />
+    <Compile Include="FoodElements\Burger.cs" />
+    <Compile Include="FoodElements\Noodles.cs" />
+    <Compile Include="FoodElements\Spaghetti.cs" />
+    <Compile Include="ImageGenerator.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,19 +95,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="FoodElements\Img\Chicken.jpg">
+    <Content Include="FoodElements\Img\burger.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FoodElements\Img\Doner.png">
+    <Content Include="FoodElements\Img\noodles.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FoodElements\Img\Meat.jpg">
+    <Content Include="FoodElements\Img\spageth.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\lampOff.jpg">
+    <Content Include="images\lamp_off.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\lampOn.jpg">
+    <Content Include="images\lamp_on.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\Microwave.jpg">
