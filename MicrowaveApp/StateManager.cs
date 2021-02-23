@@ -10,21 +10,39 @@ namespace MicrowaveApp
         public Door _door = new Door();
         public Microwave _microwave = new Microwave();
         public Lamp _lamp = new Lamp();
+        private TimerWrapper _timerWrapper;
 
-        public StateManager()
+
+        public StateManager(TimerWrapper timerWrapper)
         {
+
+            _timerWrapper = timerWrapper;
+          
+
             _microwave.StateMachine.Configure(microwave_State.Running)
-                .OnEntry(() => _lamp.TurnOn())
+                .OnEntry(() =>
+                {
+                    _lamp.TurnOn();
+                    _timerWrapper.Start();
+                })
                 .Permit(microwave_Triggers.Stop, microwave_State.Stopped)
                 .Permit(microwave_Triggers.Pause, microwave_State.Paused);
 
             _microwave.StateMachine.Configure(microwave_State.Paused)
-                .OnEntry(() => _lamp.TurnOff())
+                .OnEntry(() =>
+                {
+                    _lamp.TurnOff();
+                    _timerWrapper.Stop();
+                })
                 .PermitIf(microwave_Triggers.Start, microwave_State.Running, () => _door.StateMachine.IsInState(door_State.Closed))
                 .Permit(microwave_Triggers.Stop, microwave_State.Stopped);
 
             _microwave.StateMachine.Configure(microwave_State.Stopped)
-                .OnEntry(() => _lamp.TurnOff())
+                .OnEntry(() =>
+                {
+                    _timerWrapper.Stop();
+                    _lamp.TurnOff();
+                })
                 .PermitIf(microwave_Triggers.Start, microwave_State.Running, () => _door.StateMachine.IsInState(door_State.Closed));
 
             _door.StateMachine.Configure(door_State.Open)
@@ -43,6 +61,7 @@ namespace MicrowaveApp
                     if (_microwave.StateMachine.IsInState(microwave_State.Paused))
                     {
                         _microwave.Start();
+                  
                     }
                     _lamp.TurnOff();
                 });

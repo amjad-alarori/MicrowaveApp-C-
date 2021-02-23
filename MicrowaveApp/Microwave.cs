@@ -35,6 +35,7 @@ namespace MicrowaveApp
         public void Start()
         {
             StateMachine.Fire(microwave_Triggers.Start);
+
         }
 
         public void Stop()
