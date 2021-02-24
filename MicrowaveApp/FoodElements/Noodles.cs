@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MicrowaveApp.Food
 {
-    public class Chicken : Meal
+    public class Noodles : Meal
     {
-        public Chicken() : base("Chicken")
+        public Noodles() : base("Noodles")
         {
-            GoodTimeToCook = 30;
-            ImagePath = "FoodElements/Img/Chicken.jpg";
+            GoodTimeToCook = 25;
+            ImagePath = "FoodElements/Img/noodles.png";
         }
     }
 }

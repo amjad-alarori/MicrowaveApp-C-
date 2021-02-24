@@ -10,30 +10,27 @@ namespace MicrowaveApp
     public partial class Main : Form
     {
         // variable Chicken, Dat is een nieuwe chicken
-        Chicken Chicken = new Chicken();
-        Meat Meat = new Meat();
-        Doner Doner = new Doner();
+        Burger Burger = new Burger();
+        Noodles Noodles = new Noodles();
+        Spaghetti Spaghetti = new Spaghetti();
         Meal SelectedMeal;
         StateManager _stateManager;
         private TimerWrapper _timerWrapper;
+        private ImageGenerator _imageGenerator;
 
         public Main()
         {
             InitializeComponent();
             _timerWrapper = new TimerWrapper(timer1, textBox1);
             _stateManager = new StateManager(_timerWrapper);
-            SelectedMeal = Chicken;
+            _imageGenerator = new ImageGenerator(pictureBox1);
+            SelectedMeal = Burger;
             UpdateView();
 
         }
 
         public void UpdateView(object sender = null, EventArgs e = null)
         {
-            // Show state info in textbox and write to console
-            String info = String.Format("Microwave: {0}\n\nLamp: {1}\n\nDoor: {2}\n\n", _stateManager._microwave.StateMachine.ToString(), _stateManager._lamp.StateMachine.ToString(), _stateManager._door.StateMachine.ToString());
-            this.StateTextBox.Text = info;
-            Console.Write(info);
-
             // Verwijder alle buttons
             foreach (Button btn in this.Controls.OfType<Button>().ToList())
             {
@@ -102,29 +99,29 @@ namespace MicrowaveApp
             MethodInfo mi = _stateManager._door.GetType().GetMethod((sender as Button).Name);
             mi.Invoke(_stateManager._door, null);
         }
-        
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxMeals.SelectedIndex)
             {
                 case 0:
-                {
-                    SelectedMeal = Chicken;
-                    break;
-                }
+                    {
+                        SelectedMeal = Burger;
+                        break;
+                    }
                 case 1:
-                {
-                    SelectedMeal = Meat;
-                    break;
-                }
+                    {
+                        SelectedMeal = Noodles;
+                        break;
+                    }
                 case 2:
-                {
-                    SelectedMeal = Doner;
-                    break;
-                }
+                    {
+                        SelectedMeal = Spaghetti;
+                        break;
+                    }
             }
-
             pictureBoxFood.ImageLocation = SelectedMeal.ImagePath;
+            //_imageGenerator.setFoodImage(SelectedMeal.ImagePath);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -167,6 +164,29 @@ namespace MicrowaveApp
 
         private void Main_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxDoor_Paint(object sender, PaintEventArgs e)
+        {
+            _imageGenerator.MicrowaveImage = pictureBoxDoor.ImageLocation;
+        }
+
+        private void pictureBoxFood_Paint(object sender, PaintEventArgs e)
+        {
+            Console.WriteLine(pictureBoxFood.ImageLocation);
+            _imageGenerator.FoodImage = pictureBoxFood.ImageLocation;
+        }
+
+        private void pictureBoxLamp_Paint(object sender, PaintEventArgs e)
+        { 
+            Console.WriteLine(pictureBoxLamp.ImageLocation);
+            _imageGenerator.LampImage = pictureBoxLamp.ImageLocation;
 
         }
     }

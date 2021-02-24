@@ -40,8 +40,11 @@ namespace MicrowaveApp
         public void Open()
         {
             StateMachine.Fire(door_Triggers.Open);
-            PictureBox t = Application.OpenForms["Main"].Controls["pictureBox1"] as PictureBox;
-            t.Image = Image.FromFile("images/MicrowaveOpen.jpg");
+            ComboBox combobox = Application.OpenForms["Main"].Controls["comboBoxMeals"] as ComboBox;
+            combobox.Enabled = true;
+            PictureBox t = Application.OpenForms["Main"].Controls["pictureBoxDoor"] as PictureBox;
+
+            t.ImageLocation = "images/MicrowaveOpen.jpg";
         }
 
         
@@ -50,9 +53,10 @@ namespace MicrowaveApp
         public void Close()
         {
             StateMachine.Fire(door_Triggers.Close);
-
-            PictureBox t = Application.OpenForms["Main"].Controls["pictureBox1"] as PictureBox;
-            t.Image = Image.FromFile("images/Microwave.jpg");
+            ComboBox combobox = Application.OpenForms["Main"].Controls["comboBoxMeals"] as ComboBox;
+            combobox.Enabled = false;
+            PictureBox t = Application.OpenForms["Main"].Controls["pictureBoxDoor"] as PictureBox;
+            t.ImageLocation = "images/Microwave.jpg";
         }
     }
 }
