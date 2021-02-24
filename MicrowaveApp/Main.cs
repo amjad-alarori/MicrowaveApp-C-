@@ -23,6 +23,15 @@ namespace MicrowaveApp
             InitializeComponent();
             _timerWrapper = new TimerWrapper(timer1, textBox1);
             _stateManager = new StateManager(_timerWrapper);
+
+            // Listen to stopEvent. When created stop microwave and update view
+            _timerWrapper.StopEvent += () =>
+            {
+                //_stateManager._microwave.Pause();
+                _stateManager._microwave.Stop();
+                UpdateView();
+            };
+
             _imageGenerator = new ImageGenerator(pictureBox1);
             SelectedMeal = Burger;
             UpdateView();
@@ -71,21 +80,6 @@ namespace MicrowaveApp
                 button.Click += new EventHandler(UpdateView);
                 this.Controls.Add(button);
             }
-
-            //foreach (var permittedTrigger in _stateManager._lamp.StateMachine.GetPermittedTriggers().Select((trigger, index) => new { index, trigger }))
-            //{
-            //    Button button = new Button
-            //    {
-            //        Location = new Point(673, 200 + (23 * permittedTrigger.index)),
-            //        Name = permittedTrigger.trigger.ToString(),
-            //        Size = new Size(115, 23),
-            //        Text = "Lamp: " + permittedTrigger.trigger.ToString(),
-            //        UseVisualStyleBackColor = true,
-            //    };
-            //    button.Click += (object a, EventArgs b) => _stateManager._lamp.StateMachine.Fire(permittedTrigger.trigger);
-            //    button.Click += new EventHandler(UpdateView);
-            //    this.Controls.Add(button);
-            //}
         }
 
         public void HandleClickMicrowave(object sender, EventArgs e)
@@ -143,7 +137,7 @@ namespace MicrowaveApp
         // Button that adds 10 seconds to the timer
         private void button3_Click_1(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(10);
+            _timerWrapper.ModifyTime(1);
         }
 
         // Button that removes 10 seconds from the timer

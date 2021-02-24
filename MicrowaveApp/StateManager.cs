@@ -17,8 +17,7 @@ namespace MicrowaveApp
         {
 
             _timerWrapper = timerWrapper;
-          
-
+            
             _microwave.StateMachine.Configure(microwave_State.Running)
                 .OnEntry(() =>
                 {
@@ -32,7 +31,7 @@ namespace MicrowaveApp
                 .OnEntry(() =>
                 {
                     _lamp.TurnOff();
-                    _timerWrapper.Stop();
+                    _timerWrapper.Stop(false);
                 })
                 .PermitIf(microwave_Triggers.Start, microwave_State.Running, () => _door.StateMachine.IsInState(door_State.Closed))
                 .Permit(microwave_Triggers.Stop, microwave_State.Stopped);
@@ -40,7 +39,8 @@ namespace MicrowaveApp
             _microwave.StateMachine.Configure(microwave_State.Stopped)
                 .OnEntry(() =>
                 {
-                    _timerWrapper.Stop();
+                    // Stop timer without event
+                    _timerWrapper.Stop(false);
                     _lamp.TurnOff();
                 })
                 .PermitIf(microwave_Triggers.Start, microwave_State.Running, () => _door.StateMachine.IsInState(door_State.Closed));
