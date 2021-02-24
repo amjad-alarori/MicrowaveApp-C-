@@ -175,59 +175,107 @@ namespace MicrowaveApp
 
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        private void num5_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(5);
+            this.textBox1.Text += "5";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
-
+        
         private void num1_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(1);
+            this.textBox1.Text += "1";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
+            
         }
 
         private void num3_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(3);
+            this.textBox1.Text += "3";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num4_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(4);
+            this.textBox1.Text += "4";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num6_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(6);
+            this.textBox1.Text += "6";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num2_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(2);
+            this.textBox1.Text += "2";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num7_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(7);
+            this.textBox1.Text += "7";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num8_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(8);
+            this.textBox1.Text += "8";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num9_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(9);
+            this.textBox1.Text += "9";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void num0_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(0);
+            this.textBox1.Text += "0";
+            if (int.TryParse(textBox1.Text, out var result))
+            {
+                _timerWrapper.ModifyTime(result);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+      
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Clear();
         }
     }
 }

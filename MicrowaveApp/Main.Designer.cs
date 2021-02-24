@@ -53,9 +53,10 @@ namespace MicrowaveApp
             this.num8 = new System.Windows.Forms.Button();
             this.num9 = new System.Windows.Forms.Button();
             this.num0 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Clear = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // StateTextBox
@@ -93,10 +94,7 @@ namespace MicrowaveApp
             // 
             this.comboBoxMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMeals.FormattingEnabled = true;
-            this.comboBoxMeals.Items.AddRange(new object[] {
-            "Chicken",
-            "Meat",
-            "Döner"});
+            this.comboBoxMeals.Items.AddRange(new object[] {"Chicken", "Meat", "Döner"});
             this.comboBoxMeals.Location = new System.Drawing.Point(515, 327);
             this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMeals.Name = "comboBoxMeals";
@@ -177,7 +175,7 @@ namespace MicrowaveApp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(10, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -234,7 +232,7 @@ namespace MicrowaveApp
             this.num5.TabIndex = 14;
             this.num5.Text = "5";
             this.num5.UseVisualStyleBackColor = true;
-            this.num5.Click += new System.EventHandler(this.button7_Click_1);
+            this.num5.Click += new System.EventHandler(this.num5_Click);
             // 
             // num6
             // 
@@ -286,11 +284,23 @@ namespace MicrowaveApp
             this.num0.UseVisualStyleBackColor = true;
             this.num0.Click += new System.EventHandler(this.num0_Click);
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(557, 231);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(25, 25);
+            this.Clear.TabIndex = 20;
+            this.Clear.Text = "<--";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1125, 455);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.num0);
             this.Controls.Add(this.num9);
             this.Controls.Add(this.num8);
@@ -312,16 +322,17 @@ namespace MicrowaveApp
             this.Controls.Add(this.pictureBoxLamp);
             this.Controls.Add(this.pictureBoxFood);
             this.Controls.Add(this.StateTextBox);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Main";
-            this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.Button Clear;
 
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
