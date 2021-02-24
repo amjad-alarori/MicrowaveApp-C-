@@ -31,7 +31,7 @@ namespace MicrowaveApp
         {
             // Show state info in textbox and write to console
             String info = String.Format("Microwave: {0}\n\nLamp: {1}\n\nDoor: {2}\n\n", _stateManager._microwave.StateMachine.ToString(), _stateManager._lamp.StateMachine.ToString(), _stateManager._door.StateMachine.ToString());
-            this.StateTextBox.Text = info;
+            this.tableLayoutPanel1.Text = info;
             Console.Write(info);
 
             // Verwijder alle buttons
@@ -169,63 +169,75 @@ namespace MicrowaveApp
         {
 
         }
+        
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void StateTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            _timerWrapper.ModifyTime(5);
-        }
+        
 
         private void num1_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(1);
+            _timerWrapper.ButtonInput("1");
         }
-
+        
+        private void num2_Click(object sender, EventArgs e)
+        {
+            _timerWrapper.ButtonInput("2");
+        }
+        
         private void num3_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(3);
+            _timerWrapper.ButtonInput("3");
         }
 
         private void num4_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(4);
+            _timerWrapper.ButtonInput("4");
+        }
+        
+        private void num5_Click(object sender, EventArgs e)
+        {
+            _timerWrapper.ButtonInput("5");
         }
 
         private void num6_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(6);
-        }
-
-        private void num2_Click(object sender, EventArgs e)
-        {
-            _timerWrapper.ModifyTime(2);
+            _timerWrapper.ButtonInput("6");
         }
 
         private void num7_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(7);
+            _timerWrapper.ButtonInput("7");
         }
 
         private void num8_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(8);
+            _timerWrapper.ButtonInput("8");
         }
 
         private void num9_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(9);
+            _timerWrapper.ButtonInput("9");
         }
 
         private void num0_Click(object sender, EventArgs e)
         {
-            _timerWrapper.ModifyTime(0);
+            _timerWrapper.ButtonInput("0");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

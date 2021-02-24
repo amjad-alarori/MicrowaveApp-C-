@@ -63,10 +63,12 @@ namespace MicrowaveApp
             _timerTextBoxElement.Text = _duration.ToString();
         }
 
-        // need to make a new function to make numpad numpad function properly
-        public void ButtonInput()
+        // need to make a new function to make numpad function properly
+        public void ButtonInput(string digit)
         {
-
+            string button = "";
+            button += digit;
+            _timerTextBoxElement.Text = button;
         }
     }
 }
