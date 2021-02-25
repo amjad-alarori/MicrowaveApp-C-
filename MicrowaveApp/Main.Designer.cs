@@ -54,26 +54,27 @@ namespace MicrowaveApp
             this.num9 = new System.Windows.Forms.Button();
             this.num0 = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // StateTextBox
             // 
-            this.StateTextBox.Location = new System.Drawing.Point(-173, 2);
+            this.StateTextBox.Location = new System.Drawing.Point(-1, 2);
+            this.StateTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StateTextBox.Name = "StateTextBox";
-            this.StateTextBox.Size = new System.Drawing.Size(888, 457);
+            this.StateTextBox.Size = new System.Drawing.Size(930, 562);
             this.StateTextBox.TabIndex = 0;
             this.StateTextBox.Text = "";
             this.StateTextBox.TextChanged += new System.EventHandler(this.StateTextBox_TextChanged);
             // 
             // pictureBoxFood
             // 
-            this.pictureBoxFood.Location = new System.Drawing.Point(720, 245);
-            this.pictureBoxFood.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxFood.Location = new System.Drawing.Point(960, 302);
+            this.pictureBoxFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxFood.Name = "pictureBoxFood";
-            this.pictureBoxFood.Size = new System.Drawing.Size(186, 207);
+            this.pictureBoxFood.Size = new System.Drawing.Size(248, 255);
             this.pictureBoxFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFood.TabIndex = 1;
             this.pictureBoxFood.TabStop = false;
@@ -81,10 +82,10 @@ namespace MicrowaveApp
             // 
             // pictureBoxLamp
             // 
-            this.pictureBoxLamp.Location = new System.Drawing.Point(720, 2);
-            this.pictureBoxLamp.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLamp.Location = new System.Drawing.Point(960, 2);
+            this.pictureBoxLamp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLamp.Name = "pictureBoxLamp";
-            this.pictureBoxLamp.Size = new System.Drawing.Size(186, 239);
+            this.pictureBoxLamp.Size = new System.Drawing.Size(248, 294);
             this.pictureBoxLamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLamp.TabIndex = 2;
             this.pictureBoxLamp.TabStop = false;
@@ -94,31 +95,32 @@ namespace MicrowaveApp
             // 
             this.comboBoxMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMeals.FormattingEnabled = true;
-            this.comboBoxMeals.Items.AddRange(new object[] {"Chicken", "Meat", "Döner"});
-            this.comboBoxMeals.Location = new System.Drawing.Point(515, 327);
-            this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxMeals.Items.AddRange(new object[] {
+            "Chicken",
+            "Meat",
+            "Döner"});
+            this.comboBoxMeals.Location = new System.Drawing.Point(687, 402);
+            this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxMeals.Name = "comboBoxMeals";
-            this.comboBoxMeals.Size = new System.Drawing.Size(117, 21);
+            this.comboBoxMeals.Size = new System.Drawing.Size(155, 24);
             this.comboBoxMeals.TabIndex = 0;
             this.comboBoxMeals.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(429, 327);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(572, 402);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Select a meal";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(434, 386);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(579, 475);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Meal Status:";
             // 
@@ -127,11 +129,11 @@ namespace MicrowaveApp
             this.textBox1.AcceptsTab = true;
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox1.Location = new System.Drawing.Point(490, 54);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(653, 66);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -144,10 +146,10 @@ namespace MicrowaveApp
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(473, 282);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Location = new System.Drawing.Point(631, 347);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 19);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "+10";
             this.button3.UseVisualStyleBackColor = true;
@@ -155,10 +157,10 @@ namespace MicrowaveApp
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(533, 282);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Location = new System.Drawing.Point(711, 347);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(58, 19);
+            this.button4.Size = new System.Drawing.Size(77, 23);
             this.button4.TabIndex = 6;
             this.button4.Text = "-10";
             this.button4.UseVisualStyleBackColor = true;
@@ -166,29 +168,30 @@ namespace MicrowaveApp
             // 
             // textBoxMeal
             // 
-            this.textBoxMeal.Location = new System.Drawing.Point(515, 383);
-            this.textBoxMeal.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMeal.Location = new System.Drawing.Point(687, 471);
+            this.textBoxMeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMeal.Name = "textBoxMeal";
             this.textBoxMeal.ReadOnly = true;
-            this.textBoxMeal.Size = new System.Drawing.Size(76, 20);
+            this.textBoxMeal.Size = new System.Drawing.Size(100, 22);
             this.textBoxMeal.TabIndex = 8;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 388);
+            this.pictureBox1.Size = new System.Drawing.Size(532, 478);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // num1
             // 
-            this.num1.Location = new System.Drawing.Point(473, 109);
+            this.num1.Location = new System.Drawing.Point(631, 134);
+            this.num1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num1.Name = "num1";
-            this.num1.Size = new System.Drawing.Size(25, 25);
+            this.num1.Size = new System.Drawing.Size(33, 31);
             this.num1.TabIndex = 10;
             this.num1.Text = "1";
             this.num1.UseVisualStyleBackColor = true;
@@ -196,9 +199,10 @@ namespace MicrowaveApp
             // 
             // num2
             // 
-            this.num2.Location = new System.Drawing.Point(515, 109);
+            this.num2.Location = new System.Drawing.Point(687, 134);
+            this.num2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num2.Name = "num2";
-            this.num2.Size = new System.Drawing.Size(25, 25);
+            this.num2.Size = new System.Drawing.Size(33, 31);
             this.num2.TabIndex = 11;
             this.num2.Text = "2";
             this.num2.UseVisualStyleBackColor = true;
@@ -206,9 +210,10 @@ namespace MicrowaveApp
             // 
             // num3
             // 
-            this.num3.Location = new System.Drawing.Point(557, 109);
+            this.num3.Location = new System.Drawing.Point(743, 134);
+            this.num3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num3.Name = "num3";
-            this.num3.Size = new System.Drawing.Size(25, 25);
+            this.num3.Size = new System.Drawing.Size(33, 31);
             this.num3.TabIndex = 12;
             this.num3.Text = "3";
             this.num3.UseVisualStyleBackColor = true;
@@ -216,9 +221,10 @@ namespace MicrowaveApp
             // 
             // num4
             // 
-            this.num4.Location = new System.Drawing.Point(473, 150);
+            this.num4.Location = new System.Drawing.Point(631, 185);
+            this.num4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num4.Name = "num4";
-            this.num4.Size = new System.Drawing.Size(25, 25);
+            this.num4.Size = new System.Drawing.Size(33, 31);
             this.num4.TabIndex = 13;
             this.num4.Text = "4";
             this.num4.UseVisualStyleBackColor = true;
@@ -226,9 +232,10 @@ namespace MicrowaveApp
             // 
             // num5
             // 
-            this.num5.Location = new System.Drawing.Point(515, 150);
+            this.num5.Location = new System.Drawing.Point(687, 185);
+            this.num5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num5.Name = "num5";
-            this.num5.Size = new System.Drawing.Size(25, 25);
+            this.num5.Size = new System.Drawing.Size(33, 31);
             this.num5.TabIndex = 14;
             this.num5.Text = "5";
             this.num5.UseVisualStyleBackColor = true;
@@ -236,9 +243,10 @@ namespace MicrowaveApp
             // 
             // num6
             // 
-            this.num6.Location = new System.Drawing.Point(557, 150);
+            this.num6.Location = new System.Drawing.Point(743, 185);
+            this.num6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num6.Name = "num6";
-            this.num6.Size = new System.Drawing.Size(25, 25);
+            this.num6.Size = new System.Drawing.Size(33, 31);
             this.num6.TabIndex = 15;
             this.num6.Text = "6";
             this.num6.UseVisualStyleBackColor = true;
@@ -246,9 +254,10 @@ namespace MicrowaveApp
             // 
             // num7
             // 
-            this.num7.Location = new System.Drawing.Point(473, 190);
+            this.num7.Location = new System.Drawing.Point(631, 234);
+            this.num7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num7.Name = "num7";
-            this.num7.Size = new System.Drawing.Size(25, 25);
+            this.num7.Size = new System.Drawing.Size(33, 31);
             this.num7.TabIndex = 16;
             this.num7.Text = "7";
             this.num7.UseVisualStyleBackColor = true;
@@ -256,9 +265,10 @@ namespace MicrowaveApp
             // 
             // num8
             // 
-            this.num8.Location = new System.Drawing.Point(515, 190);
+            this.num8.Location = new System.Drawing.Point(687, 234);
+            this.num8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num8.Name = "num8";
-            this.num8.Size = new System.Drawing.Size(25, 25);
+            this.num8.Size = new System.Drawing.Size(33, 31);
             this.num8.TabIndex = 17;
             this.num8.Text = "8";
             this.num8.UseVisualStyleBackColor = true;
@@ -266,9 +276,10 @@ namespace MicrowaveApp
             // 
             // num9
             // 
-            this.num9.Location = new System.Drawing.Point(557, 190);
+            this.num9.Location = new System.Drawing.Point(743, 234);
+            this.num9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num9.Name = "num9";
-            this.num9.Size = new System.Drawing.Size(25, 25);
+            this.num9.Size = new System.Drawing.Size(33, 31);
             this.num9.TabIndex = 18;
             this.num9.Text = "9";
             this.num9.UseVisualStyleBackColor = true;
@@ -276,9 +287,10 @@ namespace MicrowaveApp
             // 
             // num0
             // 
-            this.num0.Location = new System.Drawing.Point(515, 231);
+            this.num0.Location = new System.Drawing.Point(687, 284);
+            this.num0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.num0.Name = "num0";
-            this.num0.Size = new System.Drawing.Size(25, 25);
+            this.num0.Size = new System.Drawing.Size(33, 31);
             this.num0.TabIndex = 19;
             this.num0.Text = "0";
             this.num0.UseVisualStyleBackColor = true;
@@ -286,9 +298,10 @@ namespace MicrowaveApp
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(557, 231);
+            this.Clear.Location = new System.Drawing.Point(743, 284);
+            this.Clear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(25, 25);
+            this.Clear.Size = new System.Drawing.Size(33, 31);
             this.Clear.TabIndex = 20;
             this.Clear.Text = "<--";
             this.Clear.UseVisualStyleBackColor = true;
@@ -296,10 +309,10 @@ namespace MicrowaveApp
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1125, 455);
+            this.ClientSize = new System.Drawing.Size(1500, 560);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.num0);
             this.Controls.Add(this.num9);
@@ -323,13 +336,15 @@ namespace MicrowaveApp
             this.Controls.Add(this.pictureBoxFood);
             this.Controls.Add(this.StateTextBox);
             this.Location = new System.Drawing.Point(15, 15);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button Clear;
