@@ -8,7 +8,7 @@ namespace MicrowaveApp
     public class TimerWrapper
     {
         private int _duration = 0;
-
+        
         private Timer _timerElement;
         private TextBox _timerTextBoxElement;
         SoundPlayer music = new SoundPlayer();
@@ -43,7 +43,7 @@ namespace MicrowaveApp
             // else if timer is stopped and click stop again. reset time and reenable timer
             else
             {
-
+                
                 _timerElement.Enabled = true;
                 _duration = 0;
             }
@@ -56,13 +56,15 @@ namespace MicrowaveApp
 
         public void Tick(Meal selectedMeal)
         {
-            ModifyTime(-1);
+            
+            ModifyTime(_duration -1);
             selectedMeal.Tick();
         }
 
-        public void ModifyTime(int offset)
+        public void ModifyTime(int duration)
         {
-            _duration += offset;
+            _duration = duration;
+            
 
             if (_duration < 0)
             {
@@ -75,5 +77,12 @@ namespace MicrowaveApp
             _timerTextBoxElement.Text = _duration.ToString();
         }
 
+        // need to make a new function to make numpad function properly
+        public void ButtonInput(string digit)
+        {
+            string button = "";
+            button += digit;
+            _timerTextBoxElement.Text = button;
+        }
     }
 }
