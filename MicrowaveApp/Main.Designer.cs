@@ -91,6 +91,7 @@ namespace MicrowaveApp
             // 
             // comboBoxMeals
             // 
+            this.comboBoxMeals.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.comboBoxMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMeals.Enabled = false;
             this.comboBoxMeals.FormattingEnabled = true;
@@ -98,7 +99,7 @@ namespace MicrowaveApp
             "Burger",
             "Noodles",
             "Spaghetti"});
-            this.comboBoxMeals.Location = new System.Drawing.Point(533, 224);
+            this.comboBoxMeals.Location = new System.Drawing.Point(533, 238);
             this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMeals.Name = "comboBoxMeals";
             this.comboBoxMeals.Size = new System.Drawing.Size(109, 21);
@@ -108,20 +109,23 @@ namespace MicrowaveApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(533, 209);
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(530, 218);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Select a meal";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(533, 274);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(530, 274);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(90, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Meal Status:";
             // 
@@ -148,7 +152,7 @@ namespace MicrowaveApp
             // 
             // textBoxMeal
             // 
-            this.textBoxMeal.Location = new System.Drawing.Point(533, 289);
+            this.textBoxMeal.Location = new System.Drawing.Point(533, 294);
             this.textBoxMeal.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMeal.Name = "textBoxMeal";
             this.textBoxMeal.ReadOnly = true;
@@ -157,130 +161,175 @@ namespace MicrowaveApp
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(11, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.Size = new System.Drawing.Size(500, 482);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // num1
             // 
+            this.num1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num1.Location = new System.Drawing.Point(533, 48);
             this.num1.Name = "num1";
-            this.num1.Size = new System.Drawing.Size(25, 25);
+            this.num1.Size = new System.Drawing.Size(36, 35);
             this.num1.TabIndex = 10;
             this.num1.Text = "1";
-            this.num1.UseVisualStyleBackColor = true;
+            this.num1.UseVisualStyleBackColor = false;
             this.num1.Click += new System.EventHandler(this.num1_Click);
             // 
             // num2
             // 
+            this.num2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num2.Location = new System.Drawing.Point(575, 48);
             this.num2.Name = "num2";
-            this.num2.Size = new System.Drawing.Size(25, 25);
+            this.num2.Size = new System.Drawing.Size(36, 35);
             this.num2.TabIndex = 11;
             this.num2.Text = "2";
-            this.num2.UseVisualStyleBackColor = true;
+            this.num2.UseVisualStyleBackColor = false;
             this.num2.Click += new System.EventHandler(this.num2_Click);
             // 
             // num3
             // 
+            this.num3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num3.Location = new System.Drawing.Point(617, 48);
             this.num3.Name = "num3";
-            this.num3.Size = new System.Drawing.Size(25, 25);
+            this.num3.Size = new System.Drawing.Size(34, 35);
             this.num3.TabIndex = 12;
             this.num3.Text = "3";
-            this.num3.UseVisualStyleBackColor = true;
+            this.num3.UseVisualStyleBackColor = false;
             this.num3.Click += new System.EventHandler(this.num3_Click);
             // 
             // num4
             // 
+            this.num4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num4.Location = new System.Drawing.Point(533, 89);
             this.num4.Name = "num4";
-            this.num4.Size = new System.Drawing.Size(25, 25);
+            this.num4.Size = new System.Drawing.Size(36, 34);
             this.num4.TabIndex = 13;
             this.num4.Text = "4";
-            this.num4.UseVisualStyleBackColor = true;
+            this.num4.UseVisualStyleBackColor = false;
             this.num4.Click += new System.EventHandler(this.num4_Click);
             // 
             // num5
             // 
+            this.num5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num5.Location = new System.Drawing.Point(575, 89);
             this.num5.Name = "num5";
-            this.num5.Size = new System.Drawing.Size(25, 25);
+            this.num5.Size = new System.Drawing.Size(36, 34);
             this.num5.TabIndex = 14;
             this.num5.Text = "5";
-            this.num5.UseVisualStyleBackColor = true;
+            this.num5.UseVisualStyleBackColor = false;
             this.num5.Click += new System.EventHandler(this.num5_Click);
             // 
             // num6
             // 
+            this.num6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num6.Location = new System.Drawing.Point(617, 89);
             this.num6.Name = "num6";
-            this.num6.Size = new System.Drawing.Size(25, 25);
+            this.num6.Size = new System.Drawing.Size(34, 34);
             this.num6.TabIndex = 15;
             this.num6.Text = "6";
-            this.num6.UseVisualStyleBackColor = true;
+            this.num6.UseVisualStyleBackColor = false;
             this.num6.Click += new System.EventHandler(this.num6_Click);
             // 
             // num7
             // 
+            this.num7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num7.Location = new System.Drawing.Point(533, 129);
             this.num7.Name = "num7";
-            this.num7.Size = new System.Drawing.Size(25, 25);
+            this.num7.Size = new System.Drawing.Size(36, 35);
             this.num7.TabIndex = 16;
             this.num7.Text = "7";
-            this.num7.UseVisualStyleBackColor = true;
+            this.num7.UseVisualStyleBackColor = false;
             this.num7.Click += new System.EventHandler(this.num7_Click);
             // 
             // num8
             // 
+            this.num8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num8.Location = new System.Drawing.Point(575, 129);
             this.num8.Name = "num8";
-            this.num8.Size = new System.Drawing.Size(25, 25);
+            this.num8.Size = new System.Drawing.Size(36, 35);
             this.num8.TabIndex = 17;
             this.num8.Text = "8";
-            this.num8.UseVisualStyleBackColor = true;
+            this.num8.UseVisualStyleBackColor = false;
             this.num8.Click += new System.EventHandler(this.num8_Click);
             // 
             // num9
             // 
+            this.num9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num9.Location = new System.Drawing.Point(617, 129);
             this.num9.Name = "num9";
-            this.num9.Size = new System.Drawing.Size(25, 25);
+            this.num9.Size = new System.Drawing.Size(34, 35);
             this.num9.TabIndex = 18;
             this.num9.Text = "9";
-            this.num9.UseVisualStyleBackColor = true;
+            this.num9.UseVisualStyleBackColor = false;
             this.num9.Click += new System.EventHandler(this.num9_Click);
             // 
             // num0
             // 
-            this.num0.Location = new System.Drawing.Point(575, 170);
+            this.num0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.num0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
+            this.num0.Location = new System.Drawing.Point(533, 170);
             this.num0.Name = "num0";
-            this.num0.Size = new System.Drawing.Size(25, 25);
+            this.num0.Size = new System.Drawing.Size(78, 25);
             this.num0.TabIndex = 19;
             this.num0.Text = "0";
-            this.num0.UseVisualStyleBackColor = true;
+            this.num0.UseVisualStyleBackColor = false;
             this.num0.Click += new System.EventHandler(this.num0_Click);
             // 
             // Clear
             // 
+            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(97)))), ((int)(((byte)(45)))));
+            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.Clear.Location = new System.Drawing.Point(617, 170);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(25, 25);
+            this.Clear.Size = new System.Drawing.Size(34, 25);
             this.Clear.TabIndex = 20;
             this.Clear.Text = "<--";
-            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(657, 452);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(679, 424);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.num0);
             this.Controls.Add(this.num9);

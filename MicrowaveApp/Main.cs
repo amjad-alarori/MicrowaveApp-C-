@@ -219,6 +219,7 @@ namespace MicrowaveApp
             {
                 // Find button with the key. Then perform click on the button
                 numpadDictionary[keyData].PerformClick();
+
             }
 
             // Handle default method behavior
