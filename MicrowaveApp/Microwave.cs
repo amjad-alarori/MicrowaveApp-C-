@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Stateless;
+using System.Media;
 
 namespace MicrowaveApp
 {
@@ -26,6 +27,7 @@ namespace MicrowaveApp
     {
 
         public StateMachine<microwave_State, microwave_Triggers> StateMachine;
+        SoundPlayer music = new SoundPlayer();
 
         public Microwave()
         {
@@ -36,16 +38,29 @@ namespace MicrowaveApp
         {
             StateMachine.Fire(microwave_Triggers.Start);
 
+            music.SoundLocation = "sounds/MicrowaveCookingSound.wav";
+            music.Play();
+            music.SoundLocation = "sounds/MicrowaveRunningLoop.wav";
+            music.PlayLooping();
+
         }
 
         public void Stop()
         {
-            StateMachine.Fire(microwave_Triggers.Stop);
+            if (StateMachine.CanFire(microwave_Triggers.Stop))
+            {
+                StateMachine.Fire(microwave_Triggers.Stop);
+                music.Stop();
+            }
         }
 
         public void Pause()
         {
-            StateMachine.Fire(microwave_Triggers.Pause);
+            if (StateMachine.CanFire(microwave_Triggers.Pause))
+            {
+                StateMachine.Fire(microwave_Triggers.Pause);
+                music.Stop();
+            }
         }
 
     }

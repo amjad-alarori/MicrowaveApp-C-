@@ -167,7 +167,7 @@ namespace MicrowaveApp
             // 
             // pictureBoxDoor
             // 
-            this.pictureBoxDoor.ImageLocation = "images/lamp_off.png";
+            this.pictureBoxDoor.ImageLocation = "images/Microwave.jpg";
             this.pictureBoxDoor.Location = new System.Drawing.Point(1, 1);
             this.pictureBoxDoor.Name = "pictureBoxDoor";
             this.pictureBoxDoor.Size = new System.Drawing.Size(1, 1);

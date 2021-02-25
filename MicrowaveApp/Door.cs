@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Stateless;
+using System.Media;
 
 namespace MicrowaveApp
 {
@@ -26,6 +27,9 @@ namespace MicrowaveApp
 
         public StateMachine<door_State, door_Triggers> StateMachine;
 
+        SoundPlayer music = new SoundPlayer();
+        
+
         public Door()
         {
             StateMachine = new StateMachine<door_State, door_Triggers>(door_State.Closed);
@@ -45,6 +49,9 @@ namespace MicrowaveApp
             PictureBox t = Application.OpenForms["Main"].Controls["pictureBoxDoor"] as PictureBox;
 
             t.ImageLocation = "images/MicrowaveOpen.jpg";
+
+            music.SoundLocation = "sounds/MicrowaveOpenSound.wav";
+            music.Play();
         }
 
         
@@ -57,6 +64,10 @@ namespace MicrowaveApp
             combobox.Enabled = false;
             PictureBox t = Application.OpenForms["Main"].Controls["pictureBoxDoor"] as PictureBox;
             t.ImageLocation = "images/Microwave.jpg";
+
+            music.SoundLocation = "sounds/MicrowaveCloseSound_.wav";
+            music.Play();
+            
         }
     }
 }
