@@ -30,8 +30,7 @@ namespace MicrowaveApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.StateTextBox = new System.Windows.Forms.RichTextBox();
+            this.pictureBoxDoor = new System.Windows.Forms.PictureBox();
             this.pictureBoxFood = new System.Windows.Forms.PictureBox();
             this.pictureBoxLamp = new System.Windows.Forms.PictureBox();
             this.comboBoxMeals = new System.Windows.Forms.ComboBox();
@@ -39,8 +38,6 @@ namespace MicrowaveApp
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.textBoxMeal = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.num1 = new System.Windows.Forms.Button();
@@ -54,59 +51,53 @@ namespace MicrowaveApp
             this.num9 = new System.Windows.Forms.Button();
             this.num0 = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxDoor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
-            this.pictureBoxLamp = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFood = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDoor = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).BeginInit();
             this.SuspendLayout();
             // 
-            // StateTextBox
+            // pictureBoxDoor
             // 
-            this.StateTextBox.Location = new System.Drawing.Point(-173, 2);
-            this.StateTextBox.Name = "StateTextBox";
-            this.StateTextBox.Size = new System.Drawing.Size(888, 457);
-            this.StateTextBox.TabIndex = 0;
-            this.StateTextBox.Text = "";
-            this.StateTextBox.TextChanged += new System.EventHandler(this.StateTextBox_TextChanged);
+            this.pictureBoxDoor.ImageLocation = "images/Microwave.jpg";
+            this.pictureBoxDoor.Location = new System.Drawing.Point(1, 1);
+            this.pictureBoxDoor.Name = "pictureBoxDoor";
+            this.pictureBoxDoor.Size = new System.Drawing.Size(1, 1);
+            this.pictureBoxDoor.TabIndex = 12;
+            this.pictureBoxDoor.TabStop = false;
+            this.pictureBoxDoor.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxDoor_Paint);
             // 
             // pictureBoxFood
             // 
-            this.pictureBoxFood.Location = new System.Drawing.Point(720, 245);
-            this.pictureBoxFood.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxFood.ImageLocation = "images/lamp_off.png";
+            this.pictureBoxFood.Location = new System.Drawing.Point(2, 2);
             this.pictureBoxFood.Name = "pictureBoxFood";
-            this.pictureBoxFood.Size = new System.Drawing.Size(186, 207);
+            this.pictureBoxFood.Size = new System.Drawing.Size(1, 1);
             this.pictureBoxFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxFood.TabIndex = 1;
+            this.pictureBoxFood.TabIndex = 11;
             this.pictureBoxFood.TabStop = false;
             this.pictureBoxFood.Click += new System.EventHandler(this.pictureBoxFood_Click);
+            this.pictureBoxFood.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFood_Paint);
             // 
             // pictureBoxLamp
             // 
-            this.pictureBoxLamp.Location = new System.Drawing.Point(720, 2);
-            this.pictureBoxLamp.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLamp.ImageLocation = "images/lamp_off.png";
+            this.pictureBoxLamp.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxLamp.Name = "pictureBoxLamp";
-            this.pictureBoxLamp.Size = new System.Drawing.Size(186, 239);
+            this.pictureBoxLamp.Size = new System.Drawing.Size(1, 1);
             this.pictureBoxLamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLamp.TabIndex = 2;
             this.pictureBoxLamp.TabStop = false;
             this.pictureBoxLamp.Click += new System.EventHandler(this.pictureBoxLamp_Click);
+            this.pictureBoxLamp.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxLamp_Paint);
             // 
             // comboBoxMeals
             // 
             this.comboBoxMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMeals.Enabled = false;
             this.comboBoxMeals.FormattingEnabled = true;
-            this.comboBoxMeals.Items.AddRange(new object[] {
-            "Burger",
-            "Noodles",
-            "Spaghetti"});
-            this.comboBoxMeals.Location = new System.Drawing.Point(872, 249);
-            this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxMeals.Items.AddRange(new object[] {"Chicken", "Meat", "Döner"});
-            this.comboBoxMeals.Location = new System.Drawing.Point(515, 327);
+            this.comboBoxMeals.Items.AddRange(new object[] {"Burger", "Noodles", "Spaghetti"});
+            this.comboBoxMeals.Location = new System.Drawing.Point(852, 246);
             this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMeals.Name = "comboBoxMeals";
             this.comboBoxMeals.Size = new System.Drawing.Size(117, 21);
@@ -153,28 +144,6 @@ namespace MicrowaveApp
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(852, 100);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 19);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "+10";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(922, 100);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(58, 19);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "-10";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // textBoxMeal
             // 
             this.textBoxMeal.Location = new System.Drawing.Point(872, 297);
@@ -186,7 +155,6 @@ namespace MicrowaveApp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(10, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -196,39 +164,9 @@ namespace MicrowaveApp
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pictureBoxLamp
-            // 
-            this.pictureBoxLamp.ImageLocation = "images/lamp_off.png";
-            this.pictureBoxLamp.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxLamp.Name = "pictureBoxLamp";
-            this.pictureBoxLamp.Size = new System.Drawing.Size(1, 1);
-            this.pictureBoxLamp.TabIndex = 10;
-            this.pictureBoxLamp.TabStop = false;
-            this.pictureBoxLamp.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxLamp_Paint);
-            // 
-            // pictureBoxFood
-            // 
-            this.pictureBoxFood.ImageLocation = "images/lamp_off.png";
-            this.pictureBoxFood.Location = new System.Drawing.Point(2, 2);
-            this.pictureBoxFood.Name = "pictureBoxFood";
-            this.pictureBoxFood.Size = new System.Drawing.Size(1, 1);
-            this.pictureBoxFood.TabIndex = 11;
-            this.pictureBoxFood.TabStop = false;
-            this.pictureBoxFood.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFood_Paint);
-            // 
-            // pictureBoxDoor
-            // 
-            this.pictureBoxDoor.ImageLocation = "images/Microwave.jpg";
-            this.pictureBoxDoor.Location = new System.Drawing.Point(1, 1);
-            this.pictureBoxDoor.Name = "pictureBoxDoor";
-            this.pictureBoxDoor.Size = new System.Drawing.Size(1, 1);
-            this.pictureBoxDoor.TabIndex = 12;
-            this.pictureBoxDoor.TabStop = false;
-            this.pictureBoxDoor.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxDoor_Paint);
-            // 
             // num1
             // 
-            this.num1.Location = new System.Drawing.Point(473, 109);
+            this.num1.Location = new System.Drawing.Point(609, 264);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(25, 25);
             this.num1.TabIndex = 10;
@@ -238,7 +176,7 @@ namespace MicrowaveApp
             // 
             // num2
             // 
-            this.num2.Location = new System.Drawing.Point(515, 109);
+            this.num2.Location = new System.Drawing.Point(651, 264);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(25, 25);
             this.num2.TabIndex = 11;
@@ -248,7 +186,7 @@ namespace MicrowaveApp
             // 
             // num3
             // 
-            this.num3.Location = new System.Drawing.Point(557, 109);
+            this.num3.Location = new System.Drawing.Point(693, 264);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(25, 25);
             this.num3.TabIndex = 12;
@@ -258,7 +196,7 @@ namespace MicrowaveApp
             // 
             // num4
             // 
-            this.num4.Location = new System.Drawing.Point(473, 150);
+            this.num4.Location = new System.Drawing.Point(609, 305);
             this.num4.Name = "num4";
             this.num4.Size = new System.Drawing.Size(25, 25);
             this.num4.TabIndex = 13;
@@ -268,7 +206,7 @@ namespace MicrowaveApp
             // 
             // num5
             // 
-            this.num5.Location = new System.Drawing.Point(515, 150);
+            this.num5.Location = new System.Drawing.Point(651, 305);
             this.num5.Name = "num5";
             this.num5.Size = new System.Drawing.Size(25, 25);
             this.num5.TabIndex = 14;
@@ -278,7 +216,7 @@ namespace MicrowaveApp
             // 
             // num6
             // 
-            this.num6.Location = new System.Drawing.Point(557, 150);
+            this.num6.Location = new System.Drawing.Point(693, 305);
             this.num6.Name = "num6";
             this.num6.Size = new System.Drawing.Size(25, 25);
             this.num6.TabIndex = 15;
@@ -288,7 +226,7 @@ namespace MicrowaveApp
             // 
             // num7
             // 
-            this.num7.Location = new System.Drawing.Point(473, 190);
+            this.num7.Location = new System.Drawing.Point(609, 345);
             this.num7.Name = "num7";
             this.num7.Size = new System.Drawing.Size(25, 25);
             this.num7.TabIndex = 16;
@@ -298,7 +236,7 @@ namespace MicrowaveApp
             // 
             // num8
             // 
-            this.num8.Location = new System.Drawing.Point(515, 190);
+            this.num8.Location = new System.Drawing.Point(651, 345);
             this.num8.Name = "num8";
             this.num8.Size = new System.Drawing.Size(25, 25);
             this.num8.TabIndex = 17;
@@ -308,7 +246,7 @@ namespace MicrowaveApp
             // 
             // num9
             // 
-            this.num9.Location = new System.Drawing.Point(557, 190);
+            this.num9.Location = new System.Drawing.Point(693, 345);
             this.num9.Name = "num9";
             this.num9.Size = new System.Drawing.Size(25, 25);
             this.num9.TabIndex = 18;
@@ -318,7 +256,7 @@ namespace MicrowaveApp
             // 
             // num0
             // 
-            this.num0.Location = new System.Drawing.Point(515, 231);
+            this.num0.Location = new System.Drawing.Point(651, 386);
             this.num0.Name = "num0";
             this.num0.Size = new System.Drawing.Size(25, 25);
             this.num0.TabIndex = 19;
@@ -328,7 +266,7 @@ namespace MicrowaveApp
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(557, 231);
+            this.Clear.Location = new System.Drawing.Point(693, 386);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(25, 25);
             this.Clear.TabIndex = 20;
@@ -340,7 +278,6 @@ namespace MicrowaveApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 522);
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1125, 455);
             this.Controls.Add(this.Clear);
@@ -359,30 +296,21 @@ namespace MicrowaveApp
             this.Controls.Add(this.pictureBoxFood);
             this.Controls.Add(this.pictureBoxLamp);
             this.Controls.Add(this.textBoxMeal);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxMeals);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBoxLamp);
-            this.Controls.Add(this.pictureBoxFood);
-            this.Controls.Add(this.StateTextBox);
             this.Name = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxDoor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
         private System.Windows.Forms.Button Clear;
-
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-
 
         #endregion
 
@@ -393,8 +321,7 @@ namespace MicrowaveApp
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBoxMeal;
-        
-        private System.Windows.Forms.RichTextBox StateTextBox;
+
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBoxLamp;
         private System.Windows.Forms.PictureBox pictureBoxFood;
