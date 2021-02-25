@@ -176,13 +176,15 @@ namespace MicrowaveApp
             this.num1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num1.Location = new System.Drawing.Point(711, 74);
             this.num1.Margin = new System.Windows.Forms.Padding(4);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(40, 34);
             this.num1.TabIndex = 10;
             this.num1.Text = "1";
-            this.num1.UseVisualStyleBackColor = true;
+            this.num1.UseVisualStyleBackColor = false;
             this.num1.Click += new System.EventHandler(this.num1_Click);
             // 
             // num2
@@ -190,13 +192,15 @@ namespace MicrowaveApp
             this.num2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num2.Location = new System.Drawing.Point(761, 74);
             this.num2.Margin = new System.Windows.Forms.Padding(4);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(40, 34);
             this.num2.TabIndex = 11;
             this.num2.Text = "2";
-            this.num2.UseVisualStyleBackColor = true;
+            this.num2.UseVisualStyleBackColor = false;
             this.num2.Click += new System.EventHandler(this.num2_Click);
             // 
             // num3
@@ -204,13 +208,15 @@ namespace MicrowaveApp
             this.num3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num3.Location = new System.Drawing.Point(809, 74);
             this.num3.Margin = new System.Windows.Forms.Padding(4);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(40, 34);
             this.num3.TabIndex = 12;
             this.num3.Text = "3";
-            this.num3.UseVisualStyleBackColor = true;
+            this.num3.UseVisualStyleBackColor = false;
             this.num3.Click += new System.EventHandler(this.num3_Click);
             // 
             // num4
@@ -218,13 +224,15 @@ namespace MicrowaveApp
             this.num4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num4.Location = new System.Drawing.Point(711, 116);
             this.num4.Margin = new System.Windows.Forms.Padding(4);
             this.num4.Name = "num4";
             this.num4.Size = new System.Drawing.Size(40, 34);
             this.num4.TabIndex = 13;
             this.num4.Text = "4";
-            this.num4.UseVisualStyleBackColor = true;
+            this.num4.UseVisualStyleBackColor = false;
             this.num4.Click += new System.EventHandler(this.num4_Click);
             // 
             // num5
@@ -232,13 +240,15 @@ namespace MicrowaveApp
             this.num5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num5.Location = new System.Drawing.Point(761, 116);
             this.num5.Margin = new System.Windows.Forms.Padding(4);
             this.num5.Name = "num5";
             this.num5.Size = new System.Drawing.Size(40, 34);
             this.num5.TabIndex = 14;
             this.num5.Text = "5";
-            this.num5.UseVisualStyleBackColor = true;
+            this.num5.UseVisualStyleBackColor = false;
             this.num5.Click += new System.EventHandler(this.num5_Click);
             // 
             // num6
@@ -246,13 +256,15 @@ namespace MicrowaveApp
             this.num6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num6.Location = new System.Drawing.Point(809, 116);
             this.num6.Margin = new System.Windows.Forms.Padding(4);
             this.num6.Name = "num6";
             this.num6.Size = new System.Drawing.Size(40, 34);
             this.num6.TabIndex = 15;
             this.num6.Text = "6";
-            this.num6.UseVisualStyleBackColor = true;
+            this.num6.UseVisualStyleBackColor = false;
             this.num6.Click += new System.EventHandler(this.num6_Click);
             // 
             // num7
@@ -260,13 +272,15 @@ namespace MicrowaveApp
             this.num7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num7.Location = new System.Drawing.Point(711, 158);
             this.num7.Margin = new System.Windows.Forms.Padding(4);
             this.num7.Name = "num7";
             this.num7.Size = new System.Drawing.Size(40, 34);
             this.num7.TabIndex = 16;
             this.num7.Text = "7";
-            this.num7.UseVisualStyleBackColor = true;
+            this.num7.UseVisualStyleBackColor = false;
             this.num7.Click += new System.EventHandler(this.num7_Click);
             // 
             // num8
@@ -274,13 +288,15 @@ namespace MicrowaveApp
             this.num8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num8.Location = new System.Drawing.Point(761, 158);
             this.num8.Margin = new System.Windows.Forms.Padding(4);
             this.num8.Name = "num8";
             this.num8.Size = new System.Drawing.Size(40, 34);
             this.num8.TabIndex = 17;
             this.num8.Text = "8";
-            this.num8.UseVisualStyleBackColor = true;
+            this.num8.UseVisualStyleBackColor = false;
             this.num8.Click += new System.EventHandler(this.num8_Click);
             // 
             // num9
@@ -288,13 +304,15 @@ namespace MicrowaveApp
             this.num9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num9.Location = new System.Drawing.Point(809, 158);
             this.num9.Margin = new System.Windows.Forms.Padding(4);
             this.num9.Name = "num9";
             this.num9.Size = new System.Drawing.Size(40, 34);
             this.num9.TabIndex = 18;
             this.num9.Text = "9";
-            this.num9.UseVisualStyleBackColor = true;
+            this.num9.UseVisualStyleBackColor = false;
             this.num9.Click += new System.EventHandler(this.num9_Click);
             // 
             // num0
@@ -302,13 +320,15 @@ namespace MicrowaveApp
             this.num0.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.num0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.num0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.num0.Location = new System.Drawing.Point(711, 200);
             this.num0.Margin = new System.Windows.Forms.Padding(4);
             this.num0.Name = "num0";
             this.num0.Size = new System.Drawing.Size(90, 37);
             this.num0.TabIndex = 19;
             this.num0.Text = "0";
-            this.num0.UseVisualStyleBackColor = true;
+            this.num0.UseVisualStyleBackColor = false;
             this.num0.Click += new System.EventHandler(this.num0_Click);
             // 
             // Clear
@@ -316,13 +336,15 @@ namespace MicrowaveApp
             this.Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(97)))), ((int)(((byte)(45)))));
+            this.Clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
             this.Clear.Location = new System.Drawing.Point(809, 200);
             this.Clear.Margin = new System.Windows.Forms.Padding(4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(40, 37);
             this.Clear.TabIndex = 20;
             this.Clear.Text = "<--";
-            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // groupBox1
