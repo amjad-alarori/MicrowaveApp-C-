@@ -97,17 +97,17 @@ namespace MicrowaveApp
             this.comboBoxMeals.Enabled = false;
             this.comboBoxMeals.FormattingEnabled = true;
             this.comboBoxMeals.Items.AddRange(new object[] {"Burger", "Noodles", "Spaghetti"});
-            this.comboBoxMeals.Location = new System.Drawing.Point(852, 246);
+            this.comboBoxMeals.Location = new System.Drawing.Point(533, 224);
             this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMeals.Name = "comboBoxMeals";
-            this.comboBoxMeals.Size = new System.Drawing.Size(117, 21);
+            this.comboBoxMeals.Size = new System.Drawing.Size(109, 21);
             this.comboBoxMeals.TabIndex = 0;
             this.comboBoxMeals.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(777, 249);
+            this.label1.Location = new System.Drawing.Point(533, 209);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
@@ -117,7 +117,7 @@ namespace MicrowaveApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(782, 300);
+            this.label2.Location = new System.Drawing.Point(533, 274);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -129,7 +129,7 @@ namespace MicrowaveApp
             this.textBox1.AcceptsTab = true;
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox1.Location = new System.Drawing.Point(872, 40);
+            this.textBox1.Location = new System.Drawing.Point(549, 11);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -146,16 +146,16 @@ namespace MicrowaveApp
             // 
             // textBoxMeal
             // 
-            this.textBoxMeal.Location = new System.Drawing.Point(872, 297);
+            this.textBoxMeal.Location = new System.Drawing.Point(533, 289);
             this.textBoxMeal.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMeal.Name = "textBoxMeal";
             this.textBoxMeal.ReadOnly = true;
-            this.textBoxMeal.Size = new System.Drawing.Size(76, 20);
+            this.textBoxMeal.Size = new System.Drawing.Size(109, 20);
             this.textBoxMeal.TabIndex = 8;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(10, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(500, 500);
@@ -166,7 +166,7 @@ namespace MicrowaveApp
             // 
             // num1
             // 
-            this.num1.Location = new System.Drawing.Point(609, 264);
+            this.num1.Location = new System.Drawing.Point(533, 48);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(25, 25);
             this.num1.TabIndex = 10;
@@ -176,7 +176,7 @@ namespace MicrowaveApp
             // 
             // num2
             // 
-            this.num2.Location = new System.Drawing.Point(651, 264);
+            this.num2.Location = new System.Drawing.Point(575, 48);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(25, 25);
             this.num2.TabIndex = 11;
@@ -186,7 +186,7 @@ namespace MicrowaveApp
             // 
             // num3
             // 
-            this.num3.Location = new System.Drawing.Point(693, 264);
+            this.num3.Location = new System.Drawing.Point(617, 48);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(25, 25);
             this.num3.TabIndex = 12;
@@ -196,7 +196,7 @@ namespace MicrowaveApp
             // 
             // num4
             // 
-            this.num4.Location = new System.Drawing.Point(609, 305);
+            this.num4.Location = new System.Drawing.Point(533, 89);
             this.num4.Name = "num4";
             this.num4.Size = new System.Drawing.Size(25, 25);
             this.num4.TabIndex = 13;
@@ -206,7 +206,7 @@ namespace MicrowaveApp
             // 
             // num5
             // 
-            this.num5.Location = new System.Drawing.Point(651, 305);
+            this.num5.Location = new System.Drawing.Point(575, 89);
             this.num5.Name = "num5";
             this.num5.Size = new System.Drawing.Size(25, 25);
             this.num5.TabIndex = 14;
@@ -216,7 +216,7 @@ namespace MicrowaveApp
             // 
             // num6
             // 
-            this.num6.Location = new System.Drawing.Point(693, 305);
+            this.num6.Location = new System.Drawing.Point(617, 89);
             this.num6.Name = "num6";
             this.num6.Size = new System.Drawing.Size(25, 25);
             this.num6.TabIndex = 15;
@@ -226,7 +226,7 @@ namespace MicrowaveApp
             // 
             // num7
             // 
-            this.num7.Location = new System.Drawing.Point(609, 345);
+            this.num7.Location = new System.Drawing.Point(533, 129);
             this.num7.Name = "num7";
             this.num7.Size = new System.Drawing.Size(25, 25);
             this.num7.TabIndex = 16;
@@ -236,7 +236,7 @@ namespace MicrowaveApp
             // 
             // num8
             // 
-            this.num8.Location = new System.Drawing.Point(651, 345);
+            this.num8.Location = new System.Drawing.Point(575, 129);
             this.num8.Name = "num8";
             this.num8.Size = new System.Drawing.Size(25, 25);
             this.num8.TabIndex = 17;
@@ -246,7 +246,7 @@ namespace MicrowaveApp
             // 
             // num9
             // 
-            this.num9.Location = new System.Drawing.Point(693, 345);
+            this.num9.Location = new System.Drawing.Point(617, 129);
             this.num9.Name = "num9";
             this.num9.Size = new System.Drawing.Size(25, 25);
             this.num9.TabIndex = 18;
@@ -256,7 +256,7 @@ namespace MicrowaveApp
             // 
             // num0
             // 
-            this.num0.Location = new System.Drawing.Point(651, 386);
+            this.num0.Location = new System.Drawing.Point(575, 170);
             this.num0.Name = "num0";
             this.num0.Size = new System.Drawing.Size(25, 25);
             this.num0.TabIndex = 19;
@@ -266,7 +266,7 @@ namespace MicrowaveApp
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(693, 386);
+            this.Clear.Location = new System.Drawing.Point(617, 170);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(25, 25);
             this.Clear.TabIndex = 20;
@@ -279,7 +279,7 @@ namespace MicrowaveApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1125, 455);
+            this.ClientSize = new System.Drawing.Size(1125, 588);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.num0);
             this.Controls.Add(this.num9);
