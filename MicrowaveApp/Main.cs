@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -18,6 +19,13 @@ namespace MicrowaveApp
         private TimerWrapper _timerWrapper;
         private ImageGenerator _imageGenerator;
 
+        /// <summary>
+        /// Dictionary waarin we via key (Keys) value (Button) de button kunnen vinden via de key
+        /// </summary>
+        private Dictionary<Keys, Button> numpadDictionary = new Dictionary<Keys, Button>();
+
+        private List<Button> stateButtons = new List<Button>();
+
         public Main()
         {
             InitializeComponent();
@@ -35,50 +43,78 @@ namespace MicrowaveApp
             _imageGenerator = new ImageGenerator(pictureBox1);
             SelectedMeal = Burger;
             UpdateView();
-
+            buildNumpadDictionary();
+        }
+        public void buildNumpadDictionary()
+        {
+            // Add all keys to numpadDictionary with button that belongs to that key
+            numpadDictionary.Add(Keys.D0, num0);
+            numpadDictionary.Add(Keys.D1, num1);
+            numpadDictionary.Add(Keys.D2, num2);
+            numpadDictionary.Add(Keys.D3, num3);
+            numpadDictionary.Add(Keys.D4, num4);
+            numpadDictionary.Add(Keys.D5, num5);
+            numpadDictionary.Add(Keys.D6, num6);
+            numpadDictionary.Add(Keys.D7, num7);
+            numpadDictionary.Add(Keys.D8, num8);
+            numpadDictionary.Add(Keys.D9, num9);
+            numpadDictionary.Add(Keys.NumPad0, num0);
+            numpadDictionary.Add(Keys.NumPad1, num1);
+            numpadDictionary.Add(Keys.NumPad2, num2);
+            numpadDictionary.Add(Keys.NumPad3, num3);
+            numpadDictionary.Add(Keys.NumPad4, num4);
+            numpadDictionary.Add(Keys.NumPad5, num5);
+            numpadDictionary.Add(Keys.NumPad6, num6);
+            numpadDictionary.Add(Keys.NumPad7, num7);
+            numpadDictionary.Add(Keys.NumPad8, num8);
+            numpadDictionary.Add(Keys.NumPad9, num9);
         }
 
         public void UpdateView(object sender = null, EventArgs e = null)
         {
             // Verwijder alle buttons
-            foreach (Button btn in this.Controls.OfType<Button>().ToList())
+            foreach (Button btn in stateButtons)
             {
-                if (btn.Text.ToString().Contains("~"))
-                {
-                    this.Controls.Remove(btn);
-                    btn.Dispose();
-                }
+                this.Controls.Remove(btn);
+                btn.Dispose();
             }
+
+            int ButtonX = 530;
+            int ButtonY = 330;
 
             // Foreach permitted trigger for _microwave create new button, onclick runned de trigger
             foreach (var permittedTrigger in _stateManager._microwave.StateMachine.GetPermittedTriggers().Select((trigger, index) => new { index, trigger }))
             {
                 Button button = new Button
                 {
-                    Location = new Point(1000, 12 + (23 * permittedTrigger.index)),
+                    Location = new Point(ButtonX, ButtonY),
                     Name = permittedTrigger.trigger.ToString(),
-                    Size = new Size(115, 23),
-                    Text = "~Microwave: " + permittedTrigger.trigger.ToString(),
+                    Size = new Size(115, 23), 
+                    Text = "Microwave: " + permittedTrigger.trigger.ToString(),
                     UseVisualStyleBackColor = true,
                 };
                 button.Click += new EventHandler(HandleClickMicrowave);
                 button.Click += new EventHandler(UpdateView);
                 this.Controls.Add(button);
+                ButtonY += 27;
+                stateButtons.Add(button);
             }
 
             foreach (var permittedTrigger in _stateManager._door.StateMachine.GetPermittedTriggers().Select((trigger, index) => new { index, trigger }))
             {
                 Button button = new Button
                 {
-                    Location = new Point(1000, 100 + (23 * permittedTrigger.index)),
+                    Location = new Point(ButtonX, ButtonY),
                     Name = permittedTrigger.trigger.ToString(),
                     Size = new Size(115, 23),
-                    Text = "~Door: " + permittedTrigger.trigger.ToString(),
+                    Text = "Door: " + permittedTrigger.trigger.ToString(),
                     UseVisualStyleBackColor = true,
                 };
                 button.Click += new EventHandler(HandleClickDoor);
                 button.Click += new EventHandler(UpdateView);
                 this.Controls.Add(button);
+                ButtonY += 27;
+                stateButtons.Add(button);
             }
         }
 
@@ -133,38 +169,6 @@ namespace MicrowaveApp
             _timerWrapper.Stop();
         }
 
-        // Button that adds 10 seconds to the timer
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            _timerWrapper.ModifyTime(1);
-        }
-
-        // Button that removes 10 seconds from the timer
-        private void button4_Click(object sender, EventArgs e)
-        {
-            _timerWrapper.ModifyTime(-10);
-        }
-
-        private void pictureBoxFood_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxLamp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBoxDoor_Paint(object sender, PaintEventArgs e)
         {
             _imageGenerator.MicrowaveImage = pictureBoxDoor.ImageLocation;
@@ -177,14 +181,9 @@ namespace MicrowaveApp
         }
 
         private void pictureBoxLamp_Paint(object sender, PaintEventArgs e)
-        { 
+        {
             Console.WriteLine(pictureBoxLamp.ImageLocation);
             _imageGenerator.LampImage = pictureBoxLamp.ImageLocation;
-
-        }
-
-        private void StateTextBox_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -196,17 +195,35 @@ namespace MicrowaveApp
                 _timerWrapper.ModifyTime(result);
             }
         }
-        
-        private void num1_Click(object sender, EventArgs e)
+
+        public void num1_Click(object sender, EventArgs e)
         {
             this.textBox1.Text += "1";
             if (int.TryParse(textBox1.Text, out var result))
             {
                 _timerWrapper.ModifyTime(result);
             }
-            
         }
+        /// <summary>
+        /// Processes a command key.
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.form.processcmdkey?view=net-5.0
+        /// </summary>
+        /// todo look up msg
+        /// <param name="msg">A Message, passed by reference, that represents the Win32 message to process.</param>
+        /// <param name="keyData">This value represents the key that we pressed on the keyboard</param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // If key is in dictionary. Go inside if
+            if (numpadDictionary.ContainsKey(keyData))
+            {
+                // Find button with the key. Then perform click on the button
+                numpadDictionary[keyData].PerformClick();
+            }
 
+            // Handle default method behavior
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void num3_Click(object sender, EventArgs e)
         {
             this.textBox1.Text += "3";
@@ -284,7 +301,7 @@ namespace MicrowaveApp
 
         }
 
-      
+
 
         private void Clear_Click(object sender, EventArgs e)
         {

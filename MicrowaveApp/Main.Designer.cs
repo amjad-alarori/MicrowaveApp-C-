@@ -51,10 +51,10 @@ namespace MicrowaveApp
             this.num9 = new System.Windows.Forms.Button();
             this.num0 = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxDoor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxDoor
@@ -76,7 +76,6 @@ namespace MicrowaveApp
             this.pictureBoxFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFood.TabIndex = 11;
             this.pictureBoxFood.TabStop = false;
-            this.pictureBoxFood.Click += new System.EventHandler(this.pictureBoxFood_Click);
             this.pictureBoxFood.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFood_Paint);
             // 
             // pictureBoxLamp
@@ -88,7 +87,6 @@ namespace MicrowaveApp
             this.pictureBoxLamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLamp.TabIndex = 2;
             this.pictureBoxLamp.TabStop = false;
-            this.pictureBoxLamp.Click += new System.EventHandler(this.pictureBoxLamp_Click);
             this.pictureBoxLamp.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxLamp_Paint);
             // 
             // comboBoxMeals
@@ -96,7 +94,10 @@ namespace MicrowaveApp
             this.comboBoxMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMeals.Enabled = false;
             this.comboBoxMeals.FormattingEnabled = true;
-            this.comboBoxMeals.Items.AddRange(new object[] {"Burger", "Noodles", "Spaghetti"});
+            this.comboBoxMeals.Items.AddRange(new object[] {
+            "Burger",
+            "Noodles",
+            "Spaghetti"});
             this.comboBoxMeals.Location = new System.Drawing.Point(533, 224);
             this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMeals.Name = "comboBoxMeals";
@@ -129,6 +130,7 @@ namespace MicrowaveApp
             this.textBox1.AcceptsTab = true;
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(549, 11);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
@@ -162,7 +164,6 @@ namespace MicrowaveApp
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // num1
             // 
@@ -279,7 +280,7 @@ namespace MicrowaveApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1125, 588);
+            this.ClientSize = new System.Drawing.Size(657, 452);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.num0);
             this.Controls.Add(this.num9);
@@ -301,13 +302,13 @@ namespace MicrowaveApp
             this.Controls.Add(this.comboBoxMeals);
             this.Controls.Add(this.textBox1);
             this.Name = "Main";
-            this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxDoor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button Clear;
