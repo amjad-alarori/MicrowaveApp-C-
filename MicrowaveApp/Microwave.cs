@@ -1,68 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Stateless;
+﻿using Stateless;
 using System.Media;
 
 namespace MicrowaveApp
 {
-
-    public enum microwave_State
+    /// <summary>
+    /// Define all states a microwave can be in
+    /// </summary>
+    public enum MicrowaveStates
     {
         Running,
         Paused,
         Stopped
     }
 
-    public enum microwave_Triggers
+    /// <summary>
+    /// Define all triggers that can be used to change state (later configured)
+    /// </summary>
+    public enum MicrowaveTriggers
     {
         Start,
         Pause,
         Stop
     }
 
-    class Microwave
+    /// <summary>
+    /// Microwave class. The door has a internal statemachine that is linked to different elements of the microwave in the StateManager
+    /// </summary>
+    /// <see cref="StateManager"/>
+    internal class Microwave
     {
+        // Construct new StateMachine with MicrowaveStates and MicrowaveTriggers. Also sets the StateMachine default state to MicrowaveStates.Stopped (Stopped)
+        public readonly StateMachine<MicrowaveStates, MicrowaveTriggers> StateMachine = new StateMachine<MicrowaveStates, MicrowaveTriggers>(MicrowaveStates.Stopped);
 
-        public StateMachine<microwave_State, microwave_Triggers> StateMachine;
-        SoundPlayer music = new SoundPlayer();
+        private readonly SoundPlayer _soundPlayer = new SoundPlayer();
 
-        public Microwave()
-        {
-            StateMachine = new StateMachine<microwave_State, microwave_Triggers>(microwave_State.Stopped);
-        }
-
+        /// <summary>
+        /// When run and State change is allowed, changes state to MicrowaveTriggers.Start and plays start and "mmmmmmmmmmm" sound
+        /// </summary>
         public void Start()
         {
-            StateMachine.Fire(microwave_Triggers.Start);
+            StateMachine.Fire(MicrowaveTriggers.Start);
 
-            music.SoundLocation = "sounds/MicrowaveCookingSound.wav";
-            music.Play();
-            music.SoundLocation = "sounds/MicrowaveRunningLoop.wav";
-            music.PlayLooping();
+            _soundPlayer.SoundLocation = "sounds/MicrowaveStarting.wav";
+            _soundPlayer.Play();
 
+            _soundPlayer.SoundLocation = "sounds/MicrowaveRunning.wav";
+            _soundPlayer.PlayLooping();
         }
 
+        /// <summary>
+        /// When run and State change is allowed, changes state to MicrowaveTriggers.Stop and stops "mmmmmmmmmmm" sound
+        /// </summary>
         public void Stop()
         {
-            if (StateMachine.CanFire(microwave_Triggers.Stop))
-            {
-                StateMachine.Fire(microwave_Triggers.Stop);
-                music.Stop();
-            }
+            if (!StateMachine.CanFire(MicrowaveTriggers.Stop)) return;
+
+            StateMachine.Fire(MicrowaveTriggers.Stop);
+            _soundPlayer.Stop();
         }
 
+        /// <summary>
+        /// When run and State change is allowed, changes state to MicrowaveTriggers.Pause and stops "mmmmmmmmmmm" sound
+        /// </summary>
         public void Pause()
         {
-            if (StateMachine.CanFire(microwave_Triggers.Pause))
-            {
-                StateMachine.Fire(microwave_Triggers.Pause);
-                music.Stop();
-            }
+            if (!StateMachine.CanFire(MicrowaveTriggers.Pause)) return;
+
+            StateMachine.Fire(MicrowaveTriggers.Pause);
+            _soundPlayer.Stop();
         }
-
     }
-
 }

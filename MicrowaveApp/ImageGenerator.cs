@@ -1,131 +1,98 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MicrowaveApp
 {
-    class ImageGenerator
+    internal class ImageGenerator
     {
-
-        private PictureBox _pictureBox;
+        private readonly PictureBox _pictureBox;
         private string _microwaveImage = "images/Microwave.jpg";
+        private string _foodImage = "FoodElements/Img/Burger.png";
+        private string _lampImage = "images/LampOff.png";
+
         public string MicrowaveImage
         {
-            get
-            {
-                return _microwaveImage;
-            }
             set
             {
                 _microwaveImage = value;
-                generateAndSetImage();
+                GenerateAndSetImage();
             }
         }
-        private string _foodImage = "FoodElements/Img/burger.png";
+
 
         public string FoodImage
         {
-            get
-            {
-                return _foodImage;
-            }
             set
             {
                 _foodImage = value;
-                generateAndSetImage();
+                GenerateAndSetImage();
             }
         }
-        private string _lampImage = "images/lamp_off.png";
+
 
         public string LampImage
         {
-            get
-            {
-                return _lampImage;
-            }
             set
             {
                 _lampImage = value;
-                generateAndSetImage();
+                GenerateAndSetImage();
             }
         }
 
+        /// <param name="pictureBox">Send pictureBox with construction because we can't access it from within this class</param>
         public ImageGenerator(PictureBox pictureBox)
         {
             _pictureBox = pictureBox;
         }
 
-        public void generateAndSetImage()
+        private void GenerateAndSetImage()
         {
-            string[] f = { _microwaveImage, _foodImage, _lampImage };
-            _pictureBox.Image = CombineBitmap(f);
+            List<string> files = new List<string> {_microwaveImage, _foodImage, _lampImage};
+            _pictureBox.Image = CombineBitmap(files);
         }
 
         /// <summary>
-        /// modified https://stackoverflow.com/a/11472998/13000688
+        /// CombineBitmap is used to combine images, We later use this result in a single PictureBox
+        /// Heavily modified from https://stackoverflow.com/a/11472998/13000688
         /// </summary>
-        /// <param name="files"></param>
-        /// <returns></returns>
-        public static System.Drawing.Bitmap CombineBitmap(string[] files)
+        /// <param name="files">List with paths to images</param>
+        /// <exception cref="Exception"></exception>
+        /// <returns>Single Bitmap with all files combined</returns>
+        private static Bitmap CombineBitmap(List<string> files)
         {
-            //read all images into memory
-            List<System.Drawing.Bitmap> images = new List<System.Drawing.Bitmap>();
-            System.Drawing.Bitmap finalImage = null;
+            List<Bitmap> images = new List<Bitmap>();
+            Bitmap finalImage = new Bitmap(500, 500);
 
             try
             {
-                int width = 500;
-                int height = 500;
-
-                foreach (string image in files)
-                {
-                    //create a Bitmap from the file and add it to the list
-                    System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
-
-                    //update the size of the final bitmap
-                    // width += bitmap.Width;
-                    // height = bitmap.Height > height ? bitmap.Height : height;
-
-                    images.Add(bitmap);
-                }
-
-                //create a bitmap to hold the combined image
-                finalImage = new System.Drawing.Bitmap(width, height);
+                // Foreach file in files list. Create and add new Bitmap to images list
+                files.ForEach(file => images.Add(new Bitmap(file)));
 
                 //get a graphics object from the image so we can draw on it
-                using (System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(finalImage))
+                using (Graphics graphics = Graphics.FromImage(finalImage))
                 {
-                    //set background color
-                    g.Clear(System.Drawing.Color.Transparent);
+                    //set background color to transparent
+                    graphics.Clear(Color.Transparent);
 
                     //go through each image and draw it on the final image
-                    foreach (System.Drawing.Bitmap image in images)
-                    { 
-                        g.DrawImage(image, new System.Drawing.Rectangle(0, 0, image.Width, image.Height));
-                    }
+                    images.ForEach(bitmap => { graphics.DrawImage(bitmap, 0, 0, 500, 500); });
                 }
 
                 return finalImage;
             }
-            catch (Exception ex)
+            catch
             {
-                if (finalImage != null)
-                    finalImage.Dispose();
-
-                throw ex;
+                // On exception, dispose finalImage to prevent memory issues. And rethrow exception
+                finalImage.Dispose();
+                throw;
             }
             finally
             {
-                //clean up memory
-                foreach (System.Drawing.Bitmap image in images)
-                {
-                    image.Dispose();
-                }
+                // Clean up memory
+                images.ForEach(bitmap => bitmap.Dispose());
             }
         }
-
     }
 }

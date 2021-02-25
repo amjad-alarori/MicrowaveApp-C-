@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using System.Media;
+
 namespace MicrowaveApp
 {
-    // Todo:: Rename to better class name.
     public class TimerWrapper
     {
-        private int _duration = 0;
-        
-        private Timer _timerElement;
-        private TextBox _timerTextBoxElement;
-        SoundPlayer music = new SoundPlayer();
+        private int _duration;
+        private readonly Timer _timerElement;
+        private readonly TextBox _timerTextBoxElement;
+        private readonly SoundPlayer _soundPlayer = new SoundPlayer("sounds/Ping.wav");
+
         /// <summary>
-        /// Create event to listen when event is Invoked outside the class
+        /// Create event to listen when event is Invoked
         /// </summary>
         public event Action StopEvent;
 
@@ -23,66 +22,68 @@ namespace MicrowaveApp
             _timerTextBoxElement = textBox;
         }
 
+        /// <summary>
+        /// Enable timer and start counting down
+        /// </summary>
         public void Start()
         {
             _timerElement.Enabled = true;
             _timerElement.Start();
         }
 
-        public void Stop(bool TriggerEvent = true)
+        /// <summary>
+        /// Stop all timer activities
+        /// </summary>
+        /// <param name="triggerEvent">Trigger StopEvent based on bool value</param>
+        public void Stop(bool triggerEvent = true)
         {
-            // Todo:: Check if setting enabled false is required / needed.
-            //if the timerElement.Enabled is true run _timerElement.Stop()
-            // If click stop while timer is enabled (running) stop timer and disable timer
+            // If clicked stop while timer is enabled (running) stop timer and disable timer
             if (_timerElement.Enabled)
             {
                 _timerElement.Enabled = false;
                 _timerElement.Stop();
             }
-            //else if timer was(is?) enabled reset the int _duration to 0
-            // else if timer is stopped and click stop again. reset time and reenable timer
+            // else if timer is stopped and clicked stop again. reset time and reenable timer
             else
             {
-                
                 _timerElement.Enabled = true;
                 _duration = 0;
             }
-            // Invoke event als de event niet null is
-            if (TriggerEvent)
+
+            if (triggerEvent)
             {
                 StopEvent?.Invoke();
             }
         }
 
+        /// <summary>
+        /// Tick function is ran every second when the timer is counting down (Enabled | Active)
+        /// </summary>
+        /// <param name="selectedMeal">Selected meal class to modify internal _cookingTime</param>
         public void Tick(Meal selectedMeal)
         {
-            
-            ModifyTime(_duration -1);
+            ModifyTime((_duration -= 1).ToString());
             selectedMeal.Tick();
         }
 
-        public void ModifyTime(int duration)
+        /// <summary>
+        /// Modifies the internal time and validates current time
+        /// </summary>
+        /// <param name="duration">Sets internal duration with passed input</param>
+        public void ModifyTime(string duration)
         {
-            _duration = duration;
-            
+            if (!int.TryParse(duration, out var result)) return;
+            _duration = result;
 
+            // If duration is than 0, stop microwave / timer and play done sound
             if (_duration < 0)
             {
                 _duration = 0;
                 Stop();
-                music.SoundLocation = "sounds/MicrowaveDoneSound.wav";
-                music.Play();
+                _soundPlayer.Play();
             }
 
             _timerTextBoxElement.Text = _duration.ToString();
-        }
-
-        // need to make a new function to make numpad function properly
-        public void ButtonInput(string digit)
-        {
-            string button = "";
-            button += digit;
-            _timerTextBoxElement.Text = button;
         }
     }
 }

@@ -51,10 +51,10 @@ namespace MicrowaveApp
             this.num9 = new System.Windows.Forms.Button();
             this.num0 = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxDoor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxDoor
@@ -69,7 +69,7 @@ namespace MicrowaveApp
             // 
             // pictureBoxFood
             // 
-            this.pictureBoxFood.ImageLocation = "images/lamp_off.png";
+            this.pictureBoxFood.ImageLocation = "images/LampOff.png";
             this.pictureBoxFood.Location = new System.Drawing.Point(2, 2);
             this.pictureBoxFood.Name = "pictureBoxFood";
             this.pictureBoxFood.Size = new System.Drawing.Size(1, 1);
@@ -80,7 +80,7 @@ namespace MicrowaveApp
             // 
             // pictureBoxLamp
             // 
-            this.pictureBoxLamp.ImageLocation = "images/lamp_off.png";
+            this.pictureBoxLamp.ImageLocation = "images/LampOff.png";
             this.pictureBoxLamp.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxLamp.Name = "pictureBoxLamp";
             this.pictureBoxLamp.Size = new System.Drawing.Size(1, 1);
@@ -95,14 +95,11 @@ namespace MicrowaveApp
             this.comboBoxMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMeals.Enabled = false;
             this.comboBoxMeals.FormattingEnabled = true;
-            this.comboBoxMeals.Items.AddRange(new object[] {
-            "Burger",
-            "Noodles",
-            "Spaghetti"});
-            this.comboBoxMeals.Location = new System.Drawing.Point(533, 238);
+            this.comboBoxMeals.Items.AddRange(new object[] {"Burger", "Noodles", "Spaghetti"});
+            this.comboBoxMeals.Location = new System.Drawing.Point(533, 222);
             this.comboBoxMeals.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMeals.Name = "comboBoxMeals";
-            this.comboBoxMeals.Size = new System.Drawing.Size(109, 21);
+            this.comboBoxMeals.Size = new System.Drawing.Size(118, 21);
             this.comboBoxMeals.TabIndex = 0;
             this.comboBoxMeals.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -110,8 +107,8 @@ namespace MicrowaveApp
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(530, 218);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Location = new System.Drawing.Point(533, 202);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
@@ -121,8 +118,8 @@ namespace MicrowaveApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(530, 274);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Location = new System.Drawing.Point(533, 256);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 18);
@@ -135,15 +132,14 @@ namespace MicrowaveApp
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(549, 11);
+            this.textBox1.Location = new System.Drawing.Point(535, 11);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
+            this.textBox1.Size = new System.Drawing.Size(116, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // timer1
             // 
@@ -152,11 +148,11 @@ namespace MicrowaveApp
             // 
             // textBoxMeal
             // 
-            this.textBoxMeal.Location = new System.Drawing.Point(533, 294);
+            this.textBoxMeal.Location = new System.Drawing.Point(533, 276);
             this.textBoxMeal.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMeal.Name = "textBoxMeal";
             this.textBoxMeal.ReadOnly = true;
-            this.textBoxMeal.Size = new System.Drawing.Size(109, 20);
+            this.textBoxMeal.Size = new System.Drawing.Size(118, 20);
             this.textBoxMeal.TabIndex = 8;
             // 
             // pictureBox1
@@ -172,11 +168,11 @@ namespace MicrowaveApp
             // 
             // num1
             // 
-            this.num1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num1.Location = new System.Drawing.Point(533, 48);
+            this.num1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num1.Location = new System.Drawing.Point(533, 36);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(36, 35);
             this.num1.TabIndex = 10;
@@ -186,11 +182,11 @@ namespace MicrowaveApp
             // 
             // num2
             // 
-            this.num2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num2.Location = new System.Drawing.Point(575, 48);
+            this.num2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num2.Location = new System.Drawing.Point(575, 36);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(36, 35);
             this.num2.TabIndex = 11;
@@ -200,11 +196,11 @@ namespace MicrowaveApp
             // 
             // num3
             // 
-            this.num3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num3.Location = new System.Drawing.Point(617, 48);
+            this.num3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num3.Location = new System.Drawing.Point(617, 36);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(34, 35);
             this.num3.TabIndex = 12;
@@ -214,11 +210,11 @@ namespace MicrowaveApp
             // 
             // num4
             // 
-            this.num4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num4.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num4.Location = new System.Drawing.Point(533, 89);
+            this.num4.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num4.Location = new System.Drawing.Point(533, 77);
             this.num4.Name = "num4";
             this.num4.Size = new System.Drawing.Size(36, 34);
             this.num4.TabIndex = 13;
@@ -228,11 +224,11 @@ namespace MicrowaveApp
             // 
             // num5
             // 
-            this.num5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num5.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num5.Location = new System.Drawing.Point(575, 89);
+            this.num5.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num5.Location = new System.Drawing.Point(575, 77);
             this.num5.Name = "num5";
             this.num5.Size = new System.Drawing.Size(36, 34);
             this.num5.TabIndex = 14;
@@ -242,11 +238,11 @@ namespace MicrowaveApp
             // 
             // num6
             // 
-            this.num6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num6.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num6.Location = new System.Drawing.Point(617, 89);
+            this.num6.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num6.Location = new System.Drawing.Point(617, 77);
             this.num6.Name = "num6";
             this.num6.Size = new System.Drawing.Size(34, 34);
             this.num6.TabIndex = 15;
@@ -256,11 +252,11 @@ namespace MicrowaveApp
             // 
             // num7
             // 
-            this.num7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num7.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num7.Location = new System.Drawing.Point(533, 129);
+            this.num7.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num7.Location = new System.Drawing.Point(533, 117);
             this.num7.Name = "num7";
             this.num7.Size = new System.Drawing.Size(36, 35);
             this.num7.TabIndex = 16;
@@ -270,11 +266,11 @@ namespace MicrowaveApp
             // 
             // num8
             // 
-            this.num8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num8.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num8.Location = new System.Drawing.Point(575, 129);
+            this.num8.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num8.Location = new System.Drawing.Point(575, 117);
             this.num8.Name = "num8";
             this.num8.Size = new System.Drawing.Size(36, 35);
             this.num8.TabIndex = 17;
@@ -284,11 +280,11 @@ namespace MicrowaveApp
             // 
             // num9
             // 
-            this.num9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num9.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num9.Location = new System.Drawing.Point(617, 129);
+            this.num9.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num9.Location = new System.Drawing.Point(617, 117);
             this.num9.Name = "num9";
             this.num9.Size = new System.Drawing.Size(34, 35);
             this.num9.TabIndex = 18;
@@ -298,11 +294,11 @@ namespace MicrowaveApp
             // 
             // num0
             // 
-            this.num0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.num0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.num0.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (251)))), ((int) (((byte) (253)))), ((int) (((byte) (252)))));
+            this.num0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.num0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.num0.Location = new System.Drawing.Point(533, 170);
+            this.num0.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.num0.Location = new System.Drawing.Point(533, 158);
             this.num0.Name = "num0";
             this.num0.Size = new System.Drawing.Size(78, 25);
             this.num0.TabIndex = 19;
@@ -312,11 +308,11 @@ namespace MicrowaveApp
             // 
             // Clear
             // 
-            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(97)))), ((int)(((byte)(45)))));
-            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (188)))), ((int) (((byte) (97)))), ((int) (((byte) (45)))));
+            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int) (((byte) (23)))), ((int) (((byte) (23)))), ((int) (((byte) (23)))));
             this.Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(69)))), ((int)(((byte)(173)))));
-            this.Clear.Location = new System.Drawing.Point(617, 170);
+            this.Clear.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (6)))), ((int) (((byte) (69)))), ((int) (((byte) (173)))));
+            this.Clear.Location = new System.Drawing.Point(617, 158);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(34, 25);
             this.Clear.TabIndex = 20;
@@ -351,13 +347,12 @@ namespace MicrowaveApp
             this.Controls.Add(this.comboBoxMeals);
             this.Controls.Add(this.textBox1);
             this.Name = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxDoor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxLamp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.Button Clear;

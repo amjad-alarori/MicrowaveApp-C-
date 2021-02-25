@@ -1,84 +1,89 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-
+﻿using System.Windows.Forms;
 using Stateless;
 using System.Media;
 
 namespace MicrowaveApp
 {
-
-    
-
-    public enum door_State
+    /// <summary>
+    /// Define all states a door can be in
+    /// </summary>
+    public enum DoorStates
     {
-        //Set 2 states (open & closed)
         Open,
         Closed
     }
 
-    public enum door_Triggers
+    /// <summary>
+    /// Define all triggers that can be used to change state (later configured)
+    /// </summary>
+    public enum DoorTriggers
     {
-        //Set 2 Triggers (open & closed)
         Open,
         Close
     }
 
     /// <summary>
-    /// Door constructor
+    /// Door class. The door has a internal statemachine that is linked to different elements of the microwave in the StateManager
     /// </summary>
-    class Door
+    /// <see cref="StateManager"/>
+    internal class Door
     {
-
-        public StateMachine<door_State, door_Triggers> StateMachine;
-        //Make new sound object
-        SoundPlayer music = new SoundPlayer();
-        
+        // Construct new StateMachine with DoorStates and DoorTriggers. Also sets the StateMachine default state to DoorState.Closed (Closed)
+        public readonly StateMachine<DoorStates, DoorTriggers> StateMachine = new StateMachine<DoorStates, DoorTriggers>(DoorStates.Closed);
+        private readonly SoundPlayer _soundPlayer = new SoundPlayer();
 
         public Door()
         {
-            //Set default state to closed
-            StateMachine = new StateMachine<door_State, door_Triggers>(door_State.Closed);
-            //When state is closed permit state open to be used when clicked
-            StateMachine.Configure(door_State.Closed)
-                .Permit(door_Triggers.Open, door_State.Open);
-            //when state is open permit state closed to be used when clicked
-            StateMachine.Configure(door_State.Open)
-                .Permit(door_Triggers.Close, door_State.Closed);
+            /*
+             * Configure StateMachine, when the state is in DoorState.Closed, that the only trigger allowed to run is DoorTriggers.Open.
+             * This trigger is also configured when called to set state to DoorState.Open
+             */
+            StateMachine.Configure(DoorStates.Closed)
+                .Permit(DoorTriggers.Open, DoorStates.Open);
+
+            /*
+             * Configure StateMachine, when the state is in DoorState.Open, that the only trigger allowed to run is DoorTriggers.Close.
+             * This trigger is also configured when called to set state to DoorState.Closed
+             */
+            StateMachine.Configure(DoorStates.Open)
+                .Permit(DoorTriggers.Close, DoorStates.Closed);
         }
 
+        /// <summary>
+        /// When run. Changes state to DoorStates.Open, Enable meals dropdown, Changes image and plays DoorOpen.wav sound
+        /// </summary>
         public void Open()
         {
-            StateMachine.Fire(door_Triggers.Open);
-            ComboBox combobox = Application.OpenForms["Main"].Controls["comboBoxMeals"] as ComboBox;
-            //Enable combobox so that the user can choose a dish when microwave is open
-            combobox.Enabled = true;
-            PictureBox t = Application.OpenForms["Main"].Controls["pictureBoxDoor"] as PictureBox;
-            //Show microwave open picture in the image generated picture box
-            t.ImageLocation = "images/MicrowaveOpen.jpg";
+            StateMachine.Fire(DoorTriggers.Open);
+            
+            // Find ComboBox comboBoxMeals inside Main form to enable or disable the element later in the code to select a food (since that is allowed when the door is a specific state)
+            ComboBox comboBox = Application.OpenForms["Main"]?.Controls["comboBoxMeals"] as ComboBox;
+            comboBox.Enabled = true;
 
-            music.SoundLocation = "sounds/MicrowaveOpenSound.wav";
-            //Play door open sound
-            music.Play();
+            // Find PictureBox pictureBoxDoor inside Main form to change ImageLocation to a Open image. ImageGenerator handles the rest
+            PictureBox pictureBoxDoor = Application.OpenForms["Main"]?.Controls["pictureBoxDoor"] as PictureBox;
+            pictureBoxDoor.ImageLocation = "images/MicrowaveOpen.jpg";
+
+            _soundPlayer.SoundLocation = "sounds/DoorOpen.wav";
+            _soundPlayer.Play();
         }
 
-        
-
-
+        /// <summary>
+        /// When run. Changes state to DoorStates.Closed, Disable meals dropdown, Changes image and plays DoorClose.wav sound
+        /// </summary>
         public void Close()
         {
-            StateMachine.Fire(door_Triggers.Close);
-            ComboBox combobox = Application.OpenForms["Main"].Controls["comboBoxMeals"] as ComboBox;
-            //Disable combobox so that the user can't choose a dish when microwave is closed
-            combobox.Enabled = false;
-            PictureBox t = Application.OpenForms["Main"].Controls["pictureBoxDoor"] as PictureBox;
-            //Show microwave closed picture in the image generated picture box
-            t.ImageLocation = "images/Microwave.jpg";
-
-            music.SoundLocation = "sounds/MicrowaveCloseSound_.wav";
-            //Play door close sound
-            music.Play();
+            StateMachine.Fire(DoorTriggers.Close);
             
+            ComboBox comboBox = Application.OpenForms["Main"]?.Controls["comboBoxMeals"] as ComboBox;
+            comboBox.Enabled = false;
+
+            // Find PictureBox pictureBoxDoor inside Main form to change ImageLocation to a Open image. ImageGenerator handles the rest
+            PictureBox pictureBoxDoor = Application.OpenForms["Main"]?.Controls["pictureBoxDoor"] as PictureBox;
+            pictureBoxDoor.ImageLocation = "images/Microwave.jpg";
+
+            _soundPlayer.SoundLocation = "sounds/DoorClose.wav";
+            _soundPlayer.Play();
         }
     }
 }

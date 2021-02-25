@@ -1,76 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Stateless;
-using Stateless.Graph;
+﻿using Stateless;
 
 namespace MicrowaveApp
 {
+    /// <summary>
+    /// Define all states a meal can be in
+    /// </summary>
+    public enum MealStates
+    {
+        Finished,
+        Raw,
+        Burned
+    }
+
+    /// <summary>
+    /// Define all states a lamp can be in
+    /// </summary>
+    public enum MealTriggers
+    {
+        Finish,
+        Burn
+    }
+
     public class Meal
     {
-        public string Name { get; set; }
-        public int GoodTimeToCook { get; set; }
+        protected string Name { get; set; }
+        protected int GoodTimeToCook { get; set; }
         public string ImagePath { get; set; }
-        private int CookingMargin = 4;
-        private int _cookTime = 0;
-        public StateMachine<meal_State, meal_Triggers> StateMachine;
-        /// <summary>
-        /// Default Meal constructor
-        /// </summary>
-        /// <param name="Fname">Name of food</param>
-        public Meal(string Fname)
-        {
-            Name = Fname;
-            //Make new statemachine object and set default state
-            StateMachine = new StateMachine<meal_State, meal_Triggers>(meal_State.Raw);
-            //When state raw(default) states that are permitted are .Burn and .Finished
+        private readonly int _cookingMargin = 4;
 
-            // Als state .Raw is, mag je de state naar Finished zetten via de .Finish trigger
-            StateMachine.Configure(meal_State.Raw)
-                .Permit(meal_Triggers.Finish, meal_State.Finished);
-            // Default is raw, raw => finished, finished => burned
-            StateMachine.Configure(meal_State.Finished)
-                .Permit(meal_Triggers.Burn, meal_State.Burned);
-        }
-        //Set states
-        //todo look up what enum is
-        public enum meal_State
+        private int _cookTime;
+
+        // Construct new StateMachine with MealStates and MealTriggers. Also sets the StateMachine default state to MealStates.Raw (Raw)
+        public readonly StateMachine<MealStates, MealTriggers> StateMachine = new StateMachine<MealStates, MealTriggers>(MealStates.Raw);
+
+        protected Meal()
         {
-            Finished,
-            Raw,
-            Burned
+            /*
+            * Configure StateMachine, when the state is in MealState.Raw, that the only trigger allowed to run is MealState.Finish.
+            * This trigger is also configured when called to set state to MealState.Finished
+            */
+            StateMachine.Configure(MealStates.Raw)
+                .Permit(MealTriggers.Finish, MealStates.Finished);
+
+            /*
+            * Configure StateMachine, when the state is in MealState.Finished, that the only trigger allowed to run is MealState.Burn.
+            * This trigger is also configured when called to set state to MealState.Burned
+            */
+            StateMachine.Configure(MealStates.Finished)
+                .Permit(MealTriggers.Burn, MealStates.Burned);
         }
-        //Raw is the default state
-        public enum meal_Triggers
-        {
-            //Trigger finish is for our state Finished
-            Finish,
-            //Trigger burned is for our state Burned
-            Burn
-        }
-        
+
         /// <summary>
-        /// Increase internal _cookTime by one every second (Tick) and check if meal is cooked or burned
+        /// Increase internal _cookTime by one (1) every second (Tick) and check if meal is cooked (MealStates.Finished) or burned (MealStates.Burned)
         /// </summary>
         public void Tick()
         {
-            _cookTime++; // CookTime += 1
+            _cookTime++;
 
-            // Finished
-            if (_cookTime == (GoodTimeToCook - CookingMargin))
+            // If _cookTime reaches the GoodTimeToCook with _cookingMargin it is finished
+            if (_cookTime == (GoodTimeToCook - _cookingMargin))
             {
-                StateMachine.Fire(meal_Triggers.Finish);
+                StateMachine.Fire(MealTriggers.Finish);
             }
-           
-            // Burned
-            if (_cookTime == (GoodTimeToCook + CookingMargin))
+
+            // If _cookTime in on the last second within the margin it is burned
+            if (_cookTime == (GoodTimeToCook + _cookingMargin))
             {
-                StateMachine.Fire(meal_Triggers.Burn);
+                StateMachine.Fire(MealTriggers.Burn);
             }
         }
-       
     }
 }

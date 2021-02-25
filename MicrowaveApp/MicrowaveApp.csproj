@@ -95,19 +95,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="FoodElements\Img\burger.png">
+    <Content Include="FoodElements\Img\Burger.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FoodElements\Img\noodles.png">
+    <Content Include="FoodElements\Img\Noodles.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FoodElements\Img\spageth.png">
+    <Content Include="FoodElements\Img\Spaghetti.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\lamp_off.png">
+    <Content Include="images\LampOff.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\lamp_on.png">
+    <Content Include="images\LampOn.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\Microwave.jpg">
@@ -116,22 +116,22 @@
     <Content Include="images\MicrowaveOpen.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\MicrowaveBeepSound.wav">
+    <Content Include="sounds\Beep.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\MicrowaveCloseSound_.wav">
+    <Content Include="sounds\DoorClose.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\MicrowaveCookingSound.wav">
+    <Content Include="sounds\MicrowaveStarting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\MicrowaveDoneSound.wav">
+    <Content Include="sounds\Ping.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\MicrowaveOpenSound.wav">
+    <Content Include="sounds\DoorOpen.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\MicrowaveRunningLoop.wav">
+    <Content Include="sounds\MicrowaveRunning.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

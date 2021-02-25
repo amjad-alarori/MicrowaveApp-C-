@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MicrowaveApp.Food
+﻿namespace MicrowaveApp.FoodElements
 {
+    /// <summary>
+    /// Spaghetti class, extends Meal and can be selected from "Select meal" dropdown
+    /// </summary>
     public class Spaghetti : Meal
     {
-        public Spaghetti() : base("Spaghetti")
+        public Spaghetti()
         {
+            Name = "Spaghetti";
             GoodTimeToCook = 15;
-            ImagePath = "FoodElements/Img/spageth.png";
+            ImagePath = "FoodElements/Img/Spaghetti.png";
         }
     }
 }
