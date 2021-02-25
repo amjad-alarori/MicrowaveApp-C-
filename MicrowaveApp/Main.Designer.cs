@@ -51,13 +51,11 @@ namespace MicrowaveApp
             this.num9 = new System.Windows.Forms.Button();
             this.num0 = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDoor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,7 +176,7 @@ namespace MicrowaveApp
             this.num1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num1.Location = new System.Drawing.Point(4, 4);
+            this.num1.Location = new System.Drawing.Point(711, 74);
             this.num1.Margin = new System.Windows.Forms.Padding(4);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(40, 34);
@@ -192,7 +190,7 @@ namespace MicrowaveApp
             this.num2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num2.Location = new System.Drawing.Point(52, 4);
+            this.num2.Location = new System.Drawing.Point(761, 74);
             this.num2.Margin = new System.Windows.Forms.Padding(4);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(40, 34);
@@ -206,7 +204,7 @@ namespace MicrowaveApp
             this.num3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num3.Location = new System.Drawing.Point(100, 4);
+            this.num3.Location = new System.Drawing.Point(809, 74);
             this.num3.Margin = new System.Windows.Forms.Padding(4);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(40, 34);
@@ -220,7 +218,7 @@ namespace MicrowaveApp
             this.num4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num4.Location = new System.Drawing.Point(4, 46);
+            this.num4.Location = new System.Drawing.Point(711, 116);
             this.num4.Margin = new System.Windows.Forms.Padding(4);
             this.num4.Name = "num4";
             this.num4.Size = new System.Drawing.Size(40, 34);
@@ -234,7 +232,7 @@ namespace MicrowaveApp
             this.num5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num5.Location = new System.Drawing.Point(52, 46);
+            this.num5.Location = new System.Drawing.Point(761, 116);
             this.num5.Margin = new System.Windows.Forms.Padding(4);
             this.num5.Name = "num5";
             this.num5.Size = new System.Drawing.Size(40, 34);
@@ -248,7 +246,7 @@ namespace MicrowaveApp
             this.num6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num6.Location = new System.Drawing.Point(100, 46);
+            this.num6.Location = new System.Drawing.Point(809, 116);
             this.num6.Margin = new System.Windows.Forms.Padding(4);
             this.num6.Name = "num6";
             this.num6.Size = new System.Drawing.Size(40, 34);
@@ -262,7 +260,7 @@ namespace MicrowaveApp
             this.num7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num7.Location = new System.Drawing.Point(4, 88);
+            this.num7.Location = new System.Drawing.Point(711, 158);
             this.num7.Margin = new System.Windows.Forms.Padding(4);
             this.num7.Name = "num7";
             this.num7.Size = new System.Drawing.Size(40, 34);
@@ -276,7 +274,7 @@ namespace MicrowaveApp
             this.num8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num8.Location = new System.Drawing.Point(52, 88);
+            this.num8.Location = new System.Drawing.Point(761, 158);
             this.num8.Margin = new System.Windows.Forms.Padding(4);
             this.num8.Name = "num8";
             this.num8.Size = new System.Drawing.Size(40, 34);
@@ -290,7 +288,7 @@ namespace MicrowaveApp
             this.num9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num9.Location = new System.Drawing.Point(100, 88);
+            this.num9.Location = new System.Drawing.Point(809, 158);
             this.num9.Margin = new System.Windows.Forms.Padding(4);
             this.num9.Name = "num9";
             this.num9.Size = new System.Drawing.Size(40, 34);
@@ -304,10 +302,10 @@ namespace MicrowaveApp
             this.num0.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.num0.Location = new System.Drawing.Point(52, 130);
+            this.num0.Location = new System.Drawing.Point(711, 200);
             this.num0.Margin = new System.Windows.Forms.Padding(4);
             this.num0.Name = "num0";
-            this.num0.Size = new System.Drawing.Size(40, 37);
+            this.num0.Size = new System.Drawing.Size(90, 37);
             this.num0.TabIndex = 19;
             this.num0.Text = "0";
             this.num0.UseVisualStyleBackColor = true;
@@ -318,7 +316,7 @@ namespace MicrowaveApp
             this.Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Clear.Location = new System.Drawing.Point(100, 130);
+            this.Clear.Location = new System.Drawing.Point(809, 200);
             this.Clear.Margin = new System.Windows.Forms.Padding(4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(40, 37);
@@ -326,38 +324,6 @@ namespace MicrowaveApp
             this.Clear.Text = "<--";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.num1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Clear, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.num2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.num0, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.num3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.num9, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.num4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.num8, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.num5, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.num7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.num6, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(711, 63);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(194, 171);
-            this.tableLayoutPanel1.TabIndex = 21;
             // 
             // groupBox1
             // 
@@ -379,8 +345,18 @@ namespace MicrowaveApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1500, 724);
+            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.num1);
+            this.Controls.Add(this.num0);
+            this.Controls.Add(this.num2);
+            this.Controls.Add(this.num9);
+            this.Controls.Add(this.num3);
+            this.Controls.Add(this.num8);
+            this.Controls.Add(this.num4);
+            this.Controls.Add(this.num7);
+            this.Controls.Add(this.num5);
+            this.Controls.Add(this.num6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxDoor);
             this.Controls.Add(this.pictureBoxFood);
@@ -393,7 +369,6 @@ namespace MicrowaveApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLamp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -427,7 +402,6 @@ namespace MicrowaveApp
         private System.Windows.Forms.Button num8;
         private System.Windows.Forms.Button num9;
         private System.Windows.Forms.Button num0;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
