@@ -1,14 +1,18 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace MicrowaveApp.UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class DoorTests
     {
         [TestMethod]
         public void TestMethod1()
         {
+            // construct and check for not null
+            // open function
+            // close function
+            // test all state changes
+            // test all state changes that are not allowed
         }
     }
 }
