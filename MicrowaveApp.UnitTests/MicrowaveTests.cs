@@ -12,7 +12,7 @@ namespace MicrowaveApp.UnitTests
         public void TestMicrowaveConstructAndDefaultState()
         {
             Microwave microwave = new Microwave();
-            Assert.IsTrue(microwave.StateMachine.State == MicrowaveStates.Stopped );
+            Assert.IsTrue(microwave.StateMachine.IsInState(MicrowaveStates.Stopped));
         }
         public void TestMicrowaveStoppedToStartTrigger()
         {
