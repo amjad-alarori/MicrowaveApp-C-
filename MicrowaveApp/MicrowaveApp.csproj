@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="stateless, Version=4.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
       <HintPath>..\packages\stateless.5.10.1\lib\net472\stateless.dll</HintPath>
@@ -116,6 +119,7 @@
     <Content Include="images\MicrowaveOpen.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="icon.ico" />
     <Content Include="sounds\Beep.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
