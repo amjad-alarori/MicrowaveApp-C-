@@ -27,7 +27,7 @@ namespace MicrowaveApp
     /// Microwave class. The door has a internal statemachine that is linked to different elements of the microwave in the StateManager
     /// </summary>
     /// <see cref="StateManager"/>
-    internal class Microwave
+    public class Microwave
     {
         // Construct new StateMachine with MicrowaveStates and MicrowaveTriggers. Also sets the StateMachine default state to MicrowaveStates.Stopped (Stopped)
         public readonly StateMachine<MicrowaveStates, MicrowaveTriggers> StateMachine = new StateMachine<MicrowaveStates, MicrowaveTriggers>(MicrowaveStates.Stopped);
@@ -64,8 +64,6 @@ namespace MicrowaveApp
         /// </summary>
         public void Pause()
         {
-            if (!StateMachine.CanFire(MicrowaveTriggers.Pause)) return;
-
             StateMachine.Fire(MicrowaveTriggers.Pause);
             _soundPlayer.Stop();
         }
