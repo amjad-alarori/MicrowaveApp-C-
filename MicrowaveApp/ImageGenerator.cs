@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace MicrowaveApp
 {
-    internal class ImageGenerator
+    public class ImageGenerator
     {
         private readonly PictureBox _pictureBox;
         private string _microwaveImage = "images/Microwave.jpg";
@@ -60,7 +60,7 @@ namespace MicrowaveApp
         /// <param name="files">List with paths to images</param>
         /// <exception cref="Exception"></exception>
         /// <returns>Single Bitmap with all files combined</returns>
-        private static Bitmap CombineBitmap(List<string> files)
+        public static Bitmap CombineBitmap(List<string> files)
         {
             List<Bitmap> images = new List<Bitmap>();
             Bitmap finalImage = new Bitmap(500, 500);

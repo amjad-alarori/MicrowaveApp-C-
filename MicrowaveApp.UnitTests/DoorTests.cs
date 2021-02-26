@@ -5,6 +5,9 @@ namespace MicrowaveApp.UnitTests
     [TestClass]
     public class DoorTests
     {
+        /// <summary>
+        /// Test if construct is successful and StateMachine is constructed
+        /// </summary>
         [TestMethod]
         public void TestConstructAndCheckForNull()
         {
