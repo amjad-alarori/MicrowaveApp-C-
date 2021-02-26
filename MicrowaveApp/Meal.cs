@@ -1,4 +1,5 @@
-﻿using Stateless;
+﻿using System.Collections.Generic;
+using Stateless;
 
 namespace MicrowaveApp
 {
@@ -26,15 +27,22 @@ namespace MicrowaveApp
         protected string Name { get; set; }
         protected int GoodTimeToCook { get; set; }
         public string ImagePath { get; set; }
+
         private readonly int _cookingMargin = 4;
 
         private int _cookTime;
+
+        private Dictionary<MealStates, string> dictionary = new Dictionary<MealStates, string>();
 
         // Construct new StateMachine with MealStates and MealTriggers. Also sets the StateMachine default state to MealStates.Raw (Raw)
         public readonly StateMachine<MealStates, MealTriggers> StateMachine = new StateMachine<MealStates, MealTriggers>(MealStates.Raw);
 
         protected Meal()
         {
+            dictionary.Add(MealStates.Raw, "Raw 🤢");
+            dictionary.Add(MealStates.Finished, "Finished 🙂");
+            dictionary.Add(MealStates.Burned, "Burned ☢️");
+
             /*
             * Configure StateMachine, when the state is in MealState.Raw, that the only trigger allowed to run is MealState.Finish.
             * This trigger is also configured when called to set state to MealState.Finished
@@ -69,5 +77,11 @@ namespace MicrowaveApp
                 StateMachine.Fire(MealTriggers.Burn);
             }
         }
+
+        public string GetStateWithEmoji()
+        {
+            return dictionary[StateMachine.State];
+        }
+
     }
 }

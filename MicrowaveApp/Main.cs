@@ -162,7 +162,7 @@ namespace MicrowaveApp
         private void timer1_Tick(object sender, EventArgs e)
         {
             _timerWrapper.Tick(_selectedMeal);
-            textBoxMeal.Text = _selectedMeal.StateMachine.State.ToString();
+            textBoxMeal.Text = _selectedMeal.GetStateWithEmoji();
         }
 
         // On image change update _imageGenerator value to re gen new image
