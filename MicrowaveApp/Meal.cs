@@ -28,7 +28,7 @@ namespace MicrowaveApp
         public string ImagePath { get; set; }
         private readonly int _cookingMargin = 4;
 
-        private int _cookTime;
+        public int _cookTime;
 
         // Construct new StateMachine with MealStates and MealTriggers. Also sets the StateMachine default state to MealStates.Raw (Raw)
         public StateMachine<MealStates, MealTriggers> StateMachine = new StateMachine<MealStates, MealTriggers>(MealStates.Raw);
