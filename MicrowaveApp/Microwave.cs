@@ -24,7 +24,7 @@ namespace MicrowaveApp
     }
 
     /// <summary>
-    /// Microwave class. The door has a internal statemachine that is linked to different elements of the microwave in the StateManager
+    /// Microwave class. The microwave has a internal statemachine that is linked to different elements of the microwave in the StateManager
     /// </summary>
     /// <see cref="StateManager"/>
     public class Microwave
