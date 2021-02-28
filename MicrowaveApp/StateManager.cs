@@ -10,8 +10,8 @@ namespace MicrowaveApp
     public class StateManager
     {
         public readonly Door Door = new Door();
-        public readonly Microwave Microwave = new Microwave();
-        public readonly Lamp _lamp = new Lamp();
+        public Microwave Microwave = new Microwave();
+        public Lamp _lamp = new Lamp();
         //private _lamp
         /// <param name="timerWrapper">TimerWrapper class used to keep track of time</param>
         public StateManager(TimerWrapper timerWrapper)
