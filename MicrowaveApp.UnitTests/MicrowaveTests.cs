@@ -16,7 +16,7 @@ namespace MicrowaveApp.UnitTests
         }
         public void TestMicrowaveStoppedToStartTrigger()
         {
-            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            Timer timer = new Timer();
             TextBox textBox = new TextBox();
             TimerWrapper timerWrapper = new TimerWrapper(timer, textBox);
             StateManager stateManager = new StateManager(timerWrapper);
