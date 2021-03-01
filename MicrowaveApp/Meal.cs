@@ -34,8 +34,6 @@ namespace MicrowaveApp
 
         private Dictionary<MealStates, string> dictionary = new Dictionary<MealStates, string>();
 
-        private Dictionary<MealStates, string> dictionary = new Dictionary<MealStates, string>();
-
         // Construct new StateMachine with MealStates and MealTriggers. Also sets the StateMachine default state to MealStates.Raw (Raw)
         public StateMachine<MealStates, MealTriggers> StateMachine = new StateMachine<MealStates, MealTriggers>(MealStates.Raw);
 
