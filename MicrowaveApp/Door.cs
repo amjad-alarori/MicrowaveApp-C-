@@ -26,7 +26,7 @@ namespace MicrowaveApp
     /// Door class. The door has a internal statemachine that is linked to different elements of the microwave in the StateManager
     /// </summary>
     /// <see cref="StateManager"/>
-    internal class Door
+    public class Door
     {
         // Construct new StateMachine with DoorStates and DoorTriggers. Also sets the StateMachine default state to DoorState.Closed (Closed)
         public readonly StateMachine<DoorStates, DoorTriggers> StateMachine = new StateMachine<DoorStates, DoorTriggers>(DoorStates.Closed);

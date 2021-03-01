@@ -7,12 +7,12 @@ namespace MicrowaveApp
     /// The StateManager links all microwave components together with the correct StateMachines, states and triggers.
     /// Also links the timer with the correct states. When microwave runs also start timer
     /// </summary>
-    internal class StateManager
+    public class StateManager
     {
         public readonly Door Door = new Door();
         public readonly Microwave Microwave = new Microwave();
-        private readonly Lamp _lamp = new Lamp();
-
+        public readonly Lamp _lamp = new Lamp();
+        //private _lamp
         /// <param name="timerWrapper">TimerWrapper class used to keep track of time</param>
         public StateManager(TimerWrapper timerWrapper)
         {

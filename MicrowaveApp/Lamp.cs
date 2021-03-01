@@ -25,10 +25,10 @@ namespace MicrowaveApp
     /// Lamp class. The door has a internal statemachine that is linked to different elements of the microwave in the StateManager
     /// </summary>
     /// <see cref="StateManager"/>
-    internal class Lamp
+    public class Lamp
     {
         // Construct new StateMachine with LampStates and LampTriggers. Also sets the StateMachine default state to LampStates.Off (Off)
-        private readonly StateMachine<LampStates, LampTriggers> _stateMachine = new StateMachine<LampStates, LampTriggers>(LampStates.Off);
+        public readonly StateMachine<LampStates, LampTriggers> StateMachine = new StateMachine<LampStates, LampTriggers>(LampStates.Off);
         
         public Lamp()
         {
@@ -36,14 +36,14 @@ namespace MicrowaveApp
              * Configure StateMachine, when the state is in LampStates.Off, that the only trigger allowed to run is LampTriggers.TurnOn.
              * This trigger is also configured when called to set state to LampStates.On
              */
-            _stateMachine.Configure(LampStates.Off)
+            StateMachine.Configure(LampStates.Off)
                 .Permit(LampTriggers.TurnOn, LampStates.On);
 
             /*
              * Configure StateMachine, when the state is in LampStates.On, that the only trigger allowed to run is LampTriggers.TurnOff.
              * This trigger is also configured when called to set state to LampStates.Off
              */
-            _stateMachine.Configure(LampStates.On)
+            StateMachine.Configure(LampStates.On)
                 .Permit(LampTriggers.TurnOff, LampStates.Off);
         }
 
@@ -52,9 +52,9 @@ namespace MicrowaveApp
         /// </summary>
         public void TurnOn()
         {
-            if (!_stateMachine.CanFire(LampTriggers.TurnOn)) return;
+            if (!StateMachine.CanFire(LampTriggers.TurnOn)) return;
 
-            _stateMachine.Fire(LampTriggers.TurnOn);
+            StateMachine.Fire(LampTriggers.TurnOn);
             
             // Find PictureBox pictureBoxLamp inside Main form to change ImageLocation to a Open image. ImageGenerator handles the rest
             PictureBox pictureBoxLamp = Application.OpenForms["Main"].Controls["pictureBoxLamp"] as PictureBox;
@@ -66,9 +66,9 @@ namespace MicrowaveApp
         /// </summary>
         public void TurnOff()
         {
-            if (!_stateMachine.CanFire(LampTriggers.TurnOff)) return;
+            if (!StateMachine.CanFire(LampTriggers.TurnOff)) return;
 
-            _stateMachine.Fire(LampTriggers.TurnOff);
+            StateMachine.Fire(LampTriggers.TurnOff);
             
             // Find PictureBox pictureBoxLamp inside Main form to change ImageLocation to a Open image. ImageGenerator handles the rest
             PictureBox pictureBoxLamp = Application.OpenForms["Main"].Controls["pictureBoxLamp"] as PictureBox;
